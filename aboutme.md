@@ -1,16 +1,9 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Developer/Researcher/Dream Weaver
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Andreas Weichslgartner and I am currently working as developer for Audi Electronic Ventures GmbH in the area of machine learning, AI, and security. Before, I was working as a researcher at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) and obtained my PhD in computer science there. I am interested in machine learning, AI, FPGAs, embedded systems, networks on chips, Python, Java.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+In my spare time, I like to watch and play music, cook, and travel.
