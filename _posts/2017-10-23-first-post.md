@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Welcome!
-image: /img/foz_2011.jpg
+#image: /img/foz_2011.jpg
 tags: [jekyll, blog]
 ---
 
