@@ -2,6 +2,9 @@
 layout: page
 title: Music
 subtitle: 
+bigimg: 
+-  "../img/AoC-014.jpg" : "Age of Carnage"
+- "../img/aoc_muc.JPG" : "Age of Carnage, Munich"
 ---
 
 ## Age of Carnage (2003 - 2011)
