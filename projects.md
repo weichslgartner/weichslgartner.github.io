@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 subtitle: Little Programming Things
+comments: true
 ---
 
 ## Kicker Managerspiel as a Knapsack Problem
@@ -12,7 +13,7 @@ The game only alows you to buy 22 players (3 goalies, 6 defenders, 8 midfielders
 The whole thing boils down to a constrained knapsack problem.
 This can be nicely modeled with the open-source Java-based framework [Opt4J](http://opt4j.sourceforge.net/) utilizing Evolutionary Algorithms (EA) and Boolean Satisfiability (SAT).
 
-
+$$ \alpha \cdot \beta$$
 ```java   
 Collection<Player> playerList = problem.getPlayers();
 ```

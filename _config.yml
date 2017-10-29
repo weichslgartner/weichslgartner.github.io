@@ -56,7 +56,7 @@ avatar: "/img/weichslgartner_klein.jpg"
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
   name: Andreas Weichslgartner
-  email: "weichslgartner@gmail.com"
+  email: "weichslmgartner@gmail.com"
   github: weichslgartner    # eg. daattali
   twitter: UtopianWarfare   # eg. daattali
   linkedin: andreas-weichslgartner-395827123 # eg. daattali
@@ -96,7 +96,7 @@ url-pretty: "weichslgartner.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-#disqus: ""
+disqus: "weichslgartner"
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""
@@ -119,7 +119,7 @@ title-separator: "-"
 
 # Output options (more information on Jekyll's site)
 timezone: "Europe/Berlin"
-markdown: kramdown
+markdown: redcarpet
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
