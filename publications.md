@@ -3,6 +3,8 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing
 ---
+
+
 ## 2018
 <sub>Book</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Michael Glaß, Jürgen Teich: **Invasive Computing for Mapping Parallel Programs to Many-Core Architectures.** Pages 1-185. Springer Singapore. 2018. [Link](https://www.springer.com/us/book/9789811073557)
@@ -92,3 +94,6 @@ subtitle: List of Academic Writing
 <sub>Conference paper</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Jürgen Teich: **Dynamic decentralized mapping of tree-structured applications on NoC architectures.**  In Proceedings of the International Symposium on Networks-on-Chip (NOCS), pp. 201-208. 2011. [Link](http://ieeexplore.ieee.org/document/5948565/)
 
+<p align="center">
+ [Google Scholar](https://scholar.google.de/citations?user=qJzMnhUAAAAJ&hl=en)  [dblp.org](http://dblp.org/pers/hd/w/Weichslgartner:Andreas)  [orcid](https://orcid.org/0000-0002-1368-8559)
+ </p>
