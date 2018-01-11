@@ -93,6 +93,5 @@ subtitle: List of Academic Writing
  Andreas Weichslgartner, Stefan Wildermann, Jürgen Teich: **Dynamic decentralized mapping of tree-structured applications on NoC architectures.**  In Proceedings of the International Symposium on Networks-on-Chip (NOCS), pp. 201-208. 2011. [Link](http://ieeexplore.ieee.org/document/5948565/)
 
 
-<p align="center">
+
  [Google Scholar](https://scholar.google.de/citations?user=qJzMnhUAAAAJ&hl=en)  [dblp.org](http://dblp.org/pers/hd/w/Weichslgartner:Andreas)  [orcid](https://orcid.org/0000-0002-1368-8559)
- </p>
