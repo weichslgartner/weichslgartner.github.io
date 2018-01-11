@@ -5,7 +5,7 @@ subtitle: List of Academic Writing
 ---
 ## 2018
 <sub>Book</sub>   
- Andreas Weichslgartner, Stefan Wildermann, Michael Glaß, Jürgen Teich: **Invasive Computing for Mapping Parallel Programs to Many-Core Architectures.** Pages 1-185. Springer Singapore. 2018. [Link](https://www.springer.com/us/book/9789811073557) To appear.
+ Andreas Weichslgartner, Stefan Wildermann, Michael Glaß, Jürgen Teich: **Invasive Computing for Mapping Parallel Programs to Many-Core Architectures.** Pages 1-185. Springer Singapore. 2018. [Link](https://www.springer.com/us/book/9789811073557)
 
 ## 2017
 <sub>Journal article</sub>   
@@ -14,7 +14,7 @@ subtitle: List of Academic Writing
 <sub>Journal article</sub>   
  Aurang Zaib, Jan Heisswolf, Andreas Weichslgartner, Thomas Wild, Jürgen Teich, Jürgen Becker, Andreas Herkersdorf: **Efficient Task Spawning for Shared Memory and Message Passing in Many-core Architectures.** Journal of Systems Architecture (JSA), pp. 72 - 82. Elsevier GmbH. 2017. [Link](https://doi.org/10.1016/j.sysarc.2017.03.004)
 
-<sub>Journal article</sub>   
+<sub>Article</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Deepak Gangadharan, Michael Glaß, Jürgen Teich: **A Design-Time/Run-Time Application Mapping Methodology for Predictable Execution Time in MPSoCs.** ArXiv e-prints, pp. 1-30. ArXiv. 2017. [Link](https://arxiv.org/abs/1711.05932)
 
 <sub>Dissertation</sub>     
@@ -87,7 +87,7 @@ subtitle: List of Academic Writing
 
 ## 2011
 <sub>Conference paper</sub>   
- Daniel Ziener, Stefan Wildermann, Andreas Oetken, Andreas Weichslgartner, Jürgen Teich: **A Flexible Smart Camera System based on a Partially Reconfigurable Dynamic FPGA-SoC.**  In Proceedings of the Workshop on Computer Vision on Low-Power Reconfigurable Architectures at the FPL, pp. 29--30. 2011. [Link](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.725.6716&rep=rep1&type=pdf)
+ Daniel Ziener, Stefan Wildermann, Andreas Oetken, Andreas Weichslgartner, Jürgen Teich: **A Flexible Smart Camera System based on a Partially Reconfigurable Dynamic FPGA-SoC.**  In Proceedings of the Workshop on Computer Vision on Low-Power Reconfigurable Architectures at the FPL, pp. 29--30. 2011. [Link](https://goo.gl/gYYZHH)
 
 <sub>Conference paper</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Jürgen Teich: **Dynamic decentralized mapping of tree-structured applications on NoC architectures.**  In Proceedings of the International Symposium on Networks-on-Chip (NOCS), pp. 201-208. 2011. [Link](http://ieeexplore.ieee.org/document/5948565/)
