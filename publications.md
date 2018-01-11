@@ -3,8 +3,6 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing
 ---
-
-
 ## 2018
 <sub>Book</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Michael Glaß, Jürgen Teich: **Invasive Computing for Mapping Parallel Programs to Many-Core Architectures.** Pages 1-185. Springer Singapore. 2018. [Link](https://www.springer.com/us/book/9789811073557)
@@ -16,7 +14,7 @@ subtitle: List of Academic Writing
 <sub>Journal article</sub>   
  Aurang Zaib, Jan Heisswolf, Andreas Weichslgartner, Thomas Wild, Jürgen Teich, Jürgen Becker, Andreas Herkersdorf: **Efficient Task Spawning for Shared Memory and Message Passing in Many-core Architectures.** Journal of Systems Architecture (JSA), pp. 72 - 82. Elsevier GmbH. 2017. [Link](https://doi.org/10.1016/j.sysarc.2017.03.004)
 
-<sub>Article</sub>   
+<sub>Journal article</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Deepak Gangadharan, Michael Glaß, Jürgen Teich: **A Design-Time/Run-Time Application Mapping Methodology for Predictable Execution Time in MPSoCs.** ArXiv e-prints, pp. 1-30. ArXiv. 2017. [Link](https://arxiv.org/abs/1711.05932)
 
 <sub>Dissertation</sub>     
@@ -93,6 +91,7 @@ subtitle: List of Academic Writing
 
 <sub>Conference paper</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Jürgen Teich: **Dynamic decentralized mapping of tree-structured applications on NoC architectures.**  In Proceedings of the International Symposium on Networks-on-Chip (NOCS), pp. 201-208. 2011. [Link](http://ieeexplore.ieee.org/document/5948565/)
+
 
 <p align="center">
  [Google Scholar](https://scholar.google.de/citations?user=qJzMnhUAAAAJ&hl=en)  [dblp.org](http://dblp.org/pers/hd/w/Weichslgartner:Andreas)  [orcid](https://orcid.org/0000-0002-1368-8559)
