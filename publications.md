@@ -94,6 +94,7 @@ subtitle: List of Academic Writing
 
 
 Profiles:
+
  [Google Scholar](https://scholar.google.de/citations?user=qJzMnhUAAAAJ&hl=en)  
  [dblp.org](http://dblp.org/pers/hd/w/Weichslgartner:Andreas)  
  [orcid](https://orcid.org/0000-0002-1368-8559)
