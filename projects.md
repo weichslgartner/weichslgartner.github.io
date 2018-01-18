@@ -69,7 +69,7 @@ The function  `getPlayers()` returns a collection of all the players of the leag
 Collection<Player> playerList = problem.getPlayers();
 ```
 
-A player is characterized by a unique name, his club, his tactical position, is price (value), and the points:
+A player is characterized by a unique name, his club, his tactical position, is price (value), and the points (the average rating is not used for the optimization, as the leaderboard only relies on points):
 
 ```java  
 public class Player implements Comparable<Player> {
@@ -77,9 +77,10 @@ public class Player implements Comparable<Player> {
     private String club;
     private String position;
     private float value;
-    private int points1516;
-    private float rating1516;
-
+    private int points;
+    private float rating;
+    ...
+}
 ```
 
 The set of constraints for the player selection is specified in `ManagerSpielSATCreatorDecoder`:
@@ -159,7 +160,7 @@ public PlayerSelection convertModel(Model model) {
 After 17 matchdays there is the possibility to transfer any 4 players of our team (while ensuring the budget constraint).
 I modeled this with an additional constraint, that at least 18 players need to be selected from the initial team:
 ```java
-    winterConstraint= new Constraint(Operator.GE, 18);
+winterConstraint= new Constraint(Operator.GE, 18);
 ...
 for (Player player : playerList) {
     for (Player player2 : winterplayers) {
@@ -204,14 +205,28 @@ However, as the optimization is a metaheuristic and initial solutions, crossover
 
 #### Results
 
+Opt4J provides a modular framework with nice visualization possibilities. 
+After klicking together the "kicker problem" with our creator/decoder, evaluator, a logger etc., we can watch our optimization converge over time.
+In the following screenshot you can see improvements until 2500 iterations for two tactical formations we optimze for.
 
-![Coversion over time](img/kicker_convergence.jpg "Conversion over time")
+![Conversion over time](/img/kicker_convergence.jpg "Conversion over time")
+
+After a minute our optimization finished after the specified 3000 iterations.
+We have 121 Pareto-optimal solutions in our archive.
+For example, we found a 4-3-3 squad with 1583 points and and overall points of also 1583 points. 
+This means that all the points stem from the starting eleven und the bench players contribute nothing.
+We also see that there is a solution with a team with 1602 points where the best 4-3-3 selection only has 1529 points.
+![Pareto optimal solutions](/img/kicker_archive.jpg "Pareto optimal solution after 3000 iterations")
+If we take a closer look to the Pareto-front (or the 2D representation of 2 objectives), we can see that 3-4-3 and 3-5-2 formations are correlated.
+![Pareto front of 3-4-3 and 4-3-3 formation](/img/kicker_pareto.jpg "Pareto front of 3-4-3 and 3-5-2 formation")
+
+In contrary, an optimized 3-4-3 formation and an optimized 4-5-1 formation look quite different.
+Which is quite obvious as you need 3 good strikers in the one formation and only 1 in the other.
+![Pareto front of 3-4-3 and 4-5-1 formation](/img/kicker_pareto.jpg "Pareto front of 3-4-3 and 4-5-1 formation")
 
 
-
-![Pareto optimal solutions](img/kicker_archive.jpg "Pareto optimal solution after 3000 iterations")
-
-
+Finally, an optimized squad, which I didn't use:
+![Knapsack-optimized squad](/img/kicker_1557.jpg "Knapsack-optimized squad")
 
 
 #### Limitations and Outlook
