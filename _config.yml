@@ -56,9 +56,9 @@ avatar: "/img/weichslgartner_klein.jpg"
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
   name: Andreas Weichslgartner
-  email: "weichslmgartner@gmail.com"
+  email: "weichslartner@gmail.com"
   github: weichslgartner    # eg. daattali
-  twitter: UtopianWarfare   # eg. daattali
+  twitter: weichslgartner   # eg. daattali
   linkedin: andreas-weichslgartner-395827123 # eg. daattali
 
 
