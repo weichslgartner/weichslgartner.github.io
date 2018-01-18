@@ -201,6 +201,19 @@ After some generations, our solutions will converge and no new Pareto optimal so
 However, as the optimization is a metaheuristic and initial solutions, crossover, and mutations are non-deterministic, each run may result in slightly different solutions.
 
 
+
+#### Results
+
+
+![Coversion over time](img/kicker_convergence.jpg "Conversion over time")
+
+
+
+![Pareto optimal solutions](img/kicker_archive.jpg "Pareto optimal solution after 3000 iterations")
+
+
+
+
 #### Limitations and Outlook
 
 Perfect, now we have a machine optimized team which utilizes nicely our budget and maximizes the points.
