@@ -9,6 +9,9 @@ comments: true
 
 ### The Problem
 
+![Kicker Manager Game](/img/empty.jpg "22 players for 42.5 million €uros.")
+
+
 Every year the German football magazine [kicker](https://www.kicker.de) hosts a virtual manager game. Before the start of the Bundesliga season, you can select your team from all Bundesliga squads for a with a given budget. 
 For the 1. Bundesliga the budget is 42.5 million euros, for lower leagues accordingly lesser.
 The prices of the players a determined by kicker and are based on past performances and the ability of a player.
@@ -218,10 +221,12 @@ This means that all the points stem from the starting eleven und the bench playe
 We also see that there is a solution with a team with 1602 points where the best 4-3-3 selection only has 1529 points.
 ![Pareto optimal solutions](/img/kicker_archive.jpg "Pareto optimal solution after 3000 iterations")
 If we take a closer look to the Pareto-front (or the 2D representation of 2 objectives), we can see that 3-4-3 and 3-5-2 formations are correlated.
+
 ![Pareto front of 3-4-3 and 4-3-3 formation](/img/kicker_pareto.jpg "Pareto front of 3-4-3 and 3-5-2 formation")
 
 In contrary, an optimized 3-4-3 formation and an optimized 4-5-1 formation look quite different.
 Which is quite obvious as you need 3 good strikers in the one formation and only 1 in the other.
+
 ![Pareto front of 3-4-3 and 4-5-1 formation](/img/kicker_pareto.jpg "Pareto front of 3-4-3 and 4-5-1 formation")
 
 
