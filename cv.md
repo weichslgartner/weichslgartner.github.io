@@ -2,6 +2,7 @@
 layout: page
 title: Curiculum Vitæ
 subtitle: My Life in a Nutshell
+description: Curiculum Vitæ of Andreas Weichslgartner
 ---
 
 ## Experience
