@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Curiculum Vitae
+title: Curiculum Vitæ
 subtitle: My Life in a Nutshell
 ---
 
@@ -8,7 +8,7 @@ subtitle: My Life in a Nutshell
 
 2017 - present | **Developer at Audi Electronic Ventures GmbH**, Gaimersheim, Germany 
 2010 - 2017    | **Researcher at Friedrich-Alexander-Universität Erlangen-Nürnberg**, Erlangen, Germany
-2009 - 2010    | **Intern at Infineon Technologies AG**, Regensburg, Germany
+2008 - 2009    | **Intern at Infineon Technologies AG**, Regensburg, Germany
 
 ## Education
 
