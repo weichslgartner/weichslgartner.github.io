@@ -214,7 +214,7 @@ In the following screenshot you can see improvements until 2500 iterations for t
 
 ![Conversion over time](/img/kicker_convergence.jpg "Conversion over time")
 
-After a minute our optimization finished after the specified 3000 iterations.
+Our optimization finishes after the specified 3000 iterations which takes roughly one minute.
 We have 121 Pareto-optimal solutions in our archive.
 For example, we found a 4-3-3 squad with 1583 points and and overall points of also 1583 points. 
 This means that all the points stem from the starting eleven und the bench players contribute nothing.
@@ -227,7 +227,7 @@ If we take a closer look to the Pareto-front (or the 2D representation of 2 obje
 In contrary, an optimized 3-4-3 formation and an optimized 4-5-1 formation look quite different.
 Which is quite obvious as you need 3 good strikers in the one formation and only 1 in the other.
 
-![Pareto front of 3-4-3 and 4-5-1 formation](/img/kicker_pareto.jpg "Pareto front of 3-4-3 and 4-5-1 formation")
+![Pareto front of 3-4-3 and 4-5-1 formation](/img/kicker_pareto_1.jpg "Pareto front of 3-4-3 and 4-5-1 formation")
 
 
 Finally, an optimized squad, which I didn't use:
