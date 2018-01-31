@@ -138,7 +138,6 @@ Finally, the constraint that only 4 players of one team can be in the selection 
 ```java
 if (!maxPlayerPerTeamConstraints.containsKey(player.getClub())) {
     Constraint clubConstraint = new Constraint(Operator.LE, 4);
-
     maxPlayerPerTeamConstraints.put(player.getClub(),clubConstraint);
 }
 maxPlayerPerTeamConstraints.get(player.getClub()).add(1, new Literal(player, true));
