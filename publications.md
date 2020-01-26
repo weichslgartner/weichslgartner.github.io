@@ -3,6 +3,10 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing
 ---
+## 2019 
+<sub>Conference paper</sub>   
+Andreas Weichslgartner: **Embedded Intrusion Detection based on AI.** In Proceedings of Electronics In Vehicles (ELIV), pp. 1-10. VDI. 2019. [Link](https://www.karambasecurity.com/static/pdf/IDS-Audi.pdf)
+
 ## 2018
 <sub>Book</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Michael Glaß, Jürgen Teich: **Invasive Computing for Mapping Parallel Programs to Many-Core Architectures.** Pages 1-185. Springer Singapore. 2018. [Link](https://www.springer.com/us/book/9789811073557)
