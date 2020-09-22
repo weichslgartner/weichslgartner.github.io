@@ -3,6 +3,13 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing
 ---
+## 2020
+<sub>Conference paper</sub>   
+Philipp Weiss, Andreas Weichslgartner, Felix Reimann, Sebastian Steinhorst: **Fail-Operational Automotive Software Design Using Agent-Based Graceful Degradation.** In Proceedings of 2020 Design, Automation & Test in Europe Conference & Exhibition (DATE), pp. 1169-1174. IEEE. 2020. [Link](https://ieeexplore.ieee.org/abstract/document/9116322/)
+
+<sub>Conference paper</sub>   
+Philipp Weiss, Sebastian Nagel, Andreas Weichslgartner, Sebastian Steinhorst: **Adaptable Demonstrator Platform for the Simulation of Distributed Agent-Based Automotive Systems.** In Proceedings of 2nd International Workshop on Autonomous Systems Design (ASD 2020), pp. 3:1--3:6. Schloss Dagstuhl - Leibniz-Zentrum füur Informatik. 2020. [Link](https://drops.dagstuhl.de/opus/volltexte/2020/12597/pdf/OASIcs-ASD-2020-3.pdf)
+
 ## 2019 
 <sub>Conference paper</sub>   
 Andreas Weichslgartner: **Embedded Intrusion Detection based on AI.** In Proceedings of Electronics In Vehicles (ELIV), pp. 1-10. VDI. 2019. [Link](https://www.karambasecurity.com/static/pdf/IDS-Audi.pdf)
