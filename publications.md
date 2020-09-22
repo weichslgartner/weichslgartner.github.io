@@ -18,6 +18,9 @@ Andreas Weichslgartner: **Embedded Intrusion Detection based on AI.** In Proceed
 <sub>Book</sub>   
  Andreas Weichslgartner, Stefan Wildermann, Michael Glaß, Jürgen Teich: **Invasive Computing for Mapping Parallel Programs to Many-Core Architectures.** Pages 1-185. Springer Singapore. 2018. [Link](https://www.springer.com/us/book/9789811073557)
 
+ <sub>Journal article</sub>   
+ Andreas Weichslgartner, Stefan Wildermann, Deepak Gangadharan, Michael Glaß, Jürgen Teich: **A Design-Time/Run-Time Application Mapping Methodology for Predictable Execution Time in MPSoCs.** ACM Transactions on Embedded Computing Systems (TECS), pp. 89:1--89:25. ACM. 2018. [Link](https://dl.acm.org/doi/10.1145/3274665)
+
 ## 2017
 <sub>Journal article</sub>   
  Tobias Schwarzer, Andreas Weichslgartner, Michael Glaß, Stefan Wildermann, Peter Brand, Jürgen Teich: **Symmetry-eliminating Design Space Exploration for Hybrid Application Mapping on Many-Core Architectures.** IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, pp. 1-14. IEEE. 2017. [Link](https://doi.org/10.1109/TCAD.2017.2695894)
@@ -87,7 +90,7 @@ Andreas Weichslgartner: **Embedded Intrusion Detection based on AI.** In Proceed
  Jan Heisswolf, Andreas Weichslgartner, Aurang Zaib, Ralf Konig, Thomas Wild, Andreas Herkersdorf, Jürgen Teich, Jürgen Becker: **Hardware Supported Adaptive Data Collection for Networks on Chip.**  In International Parallel and Distributed Processing Symposium Workshops PhD Forum (IPDPSW), pp. 153-162. 2013. [Link](https://doi.org/10.1109/IPDPSW.2013.124)
 
 <sub>Conference paper</sub>   
- Aurang Zaib, Jan Heisswolf, Andreas Weichslgartner, Thomas Wild, Jürgen Teich, Jürgen Becker, Andreas Herkersdorf: **AUTO-GS: Self-optimization of NoC Traffic Through Hardware Managed Virtual Connections.**  In Proceedings of the Euromicro Conference on Digital System Design Architectures, Methods and Tools (DSD), pp. . 2013. [Link](https://doi.org/10.1109/DSD.2013.87)
+ Aurang Zaib, Jan Heisswolf, Andreas Weichslgartner, Thomas Wild, Jürgen Teich, Jürgen Becker, Andreas Herkersdorf: **AUTO-GS: Self-optimization of NoC Traffic Through Hardware Managed Virtual Connections.**  In Proceedings of the Euromicro Conference on Digital System Design Architectures, Methods and Tools (DSD), pp. 761-768. IEEE. 2013. [Link](https://doi.org/10.1109/DSD.2013.87)
 
 ## 2012
 <sub>Conference paper</sub>   
