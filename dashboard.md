@@ -2010,3 +2010,111 @@ ax.legend(["Confirmed cases Germany per million"])
 This concludes the inspection and pre-procession of the raw data and we can jump into the dashboard creation.
 
 ## Doing the Bokeh
+
+Bokeh enables you to create interactive visualization in your browser.
+You can create plots, tables, and other widgets to control appearance of the plots.
+In the case of our dashboard, we use two plots on the left (one line plot for the cases, and plotting circles in a world map).
+Further, we use some tables, buttons, sliders, multi-select lists etc.
+
+These elements are arranged as follows: 
+
+![png](img/dashboard/layout.png)
+In Python code, we use the layout function, which takes a list of further layout elements.
+Specifically, we use column and row elements.
+The first row consists of three columns, where "column 0" contains the two plots.
+"Column 1" consists of two tables with html headings and the last columns has all the buttons and widgets for control.
+The bottom row's only element is a footer text line:
+
+```python
+self.layout = layout([
+            row(column(tab_plot, world_map),
+                column(top_top_14_new_header, top_top_14_new, top_top_14_cum_header, top_top_14_cum),
+                column(refresh_button, radio_button_group_df, radio_button_group_per_capita, plots_button_group,
+                       radio_button_group_scale, slider, radio_button_average,
+                       multi_select),
+                ),
+            row(footer)
+            ])
+```
+
+This footer for example is a simple Div element with HTML inside:
+
+```python
+footer = Div(
+            text="""Covid-19 Dashboard created by Andreas Weichslgartner in April 2020 with python, bokeh, pandas, 
+            numpy, pyproj, and colorcet. Source Code can be found at 
+            <a href="https://github.com/weichslgartner/covid_dashboard/">Github</a>.""",
+            width=1600, height=10, align='center')
+```
+
+The buttons and selections widgets on the right also quite easy to implement.
+Just give a list with labels and a paramter which signals what button is active.
+Then add a callback function which will be triggered on clicking on the buttons.
+
+```python
+        radio_button_group_per_capita = RadioButtonGroup(
+            labels=["Total Cases", "Cases per Million"], active=0 if not self.active_per_capita else 1)
+        radio_button_group_per_capita.on_click(self.update_capita)
+```
+
+
+The onclick callback function as one argument, the new value of the active button.
+In the case of the per_capita button, it is `0` for total numbers and `1` if the per_capita option is activated.
+As you see in the function, the current active status is kept in class member variables.
+First, I used global variables (which is fine for small bokeh plots), but gets rather ugly for more states.
+So, I decided to create a `class Dashboard` and encapsulate all the state variables as class members.
+Coming back to the callback function, once we saved the state, we update the table data (`self.generate_table_new()`and `self.generate_table_cumulative()`).
+Finally, we update the line plot in the upper left with  the `self.update_data` function.
+
+
+```python
+    def update_capita(self, new):
+        """
+        callback to change between total and per capita numbers
+        :param new: 0 if total, 1 if per capita
+        :return:
+        """
+        if new == 0:
+            self.active_per_capita = False  # 'total'
+        else:
+            self.active_per_capita = True  # 'per_capita'
+        self.generate_table_new()
+        self.generate_table_cumulative()
+        self.update_data('', self.country_list, self.country_list)
+```
+
+The second kind of callbacks are onchange functions, like in the case of the multiselect widget:
+
+```python
+        multi_select = MultiSelect(title="Option (Multiselect Ctrl+Click):", value=self.country_list,
+                                   options=countries, height=500)
+        multi_select.on_change('value', self.update_data)
+```
+Here, the value is a list with the active countries and the callback function has a attribute value, the old value of the list and the new:
+```python
+    def update_data(self, attr, old, new):
+        """
+        repaints the plots with an updated country list
+        :param attr:
+        :param old:
+        :param new:
+        :return:
+        """
+        _ = (attr, old)
+        self.country_list = new
+        self.source.data = self.get_dict_from_df(self.active_df, self.country_list, self.active_prefix.name)
+        self.layout.set_select(dict(name=TAB_PANE), dict(tabs=self.generate_plot(self.source).tabs))
+```
+
+However, we only use the new value (currently active countries) and discard the other two parameters.
+Afterwards, we update the data source of the plot and redraw the complete plot.
+The data source is defined as `ColumnDataSource(data=new_dict)`.
+In this dict each key is one plot line type and the values of this keys are the data point.
+For example, `germany_confirmed_daily_raw` represents the confirmed cases on a daily basis without average.
+Based on the active member variables these key values entries are generates by the `self.get_dict_from_df` function.
+Normally, this would be enough to update the plot but we might also influence the axis, scaling etc, that's why just replace the old plot with a new one.
+To do this we use `layout.set_select` which searches for the element with the given name "TAB_PANE" and then replaces it with a new `tabs` element.
+The `tabs` element in our case is the line plot in the upper left with the two tabs daily and cumulative.
+You could also select the layout element by iterating through some children layout elements, e.g. `layout.children[0].children[0]`.
+I did this in the beginning, but this is rather ugly and once you update your layout you manually have to update to correct child.
+Thankfully I discovered  `set_select` and can now search by a unique name of the element.
