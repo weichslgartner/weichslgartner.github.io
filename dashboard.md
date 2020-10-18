@@ -2,7 +2,7 @@
 
 There is a plethora of Covid-19 dashboards in the depths of the internet.
 However, they often let you not play around with the data and the parameters.
-So why not just build out own and costumize it to our preferences.
+So why not just build out own and customize it to our preferences.
 For interactive plots and visualization I love to work with bokeh.
 Without having to write javascript you can create everything you need for a dashboard and creates javascript output which can be rendered nicely in your browser.
 The final product looks like this:
@@ -224,7 +224,7 @@ df.loc[german_index,case_columns].plot()
 ```
 ![png](img/dashboard/output_5_1.png)
 So we see that the data is cumulative and always increasing.
-To get the new cases for every day we can just use `diff()` to subtract each suceeding columns.
+To get the new cases for every day we can just use `diff()` to subtract each succeeding columns.
 
 ```python
 df.loc[german_index,case_columns].diff().plot()
@@ -246,7 +246,7 @@ This looks much better now.
 Later in the dashboard, we make the window size and the average function interactive parameters.
 
 After we know how the numbers can be plotted, we want to inspect the missing data.
-If we drop all rows containing an `nan` and get the ramaining unique countries, we will see the following: 
+If we drop all rows containing an `nan` and get the remaining unique countries, we will see the following: 
 ```python
 df.dropna()["Country/Region"].unique()
 ```
@@ -258,7 +258,7 @@ df.dropna()["Country/Region"].unique()
            'United Kingdom'], dtype=object)
 
 
-As all the `nan` values are located in the Province/State colum, we cann also select the rows where this column is not `nan` and see the same result.
+As all the `nan` values are located in the Province/State column, we cann also select the rows where this column is not `nan` and see the same result.
 ```python
 df[~pd.isna(df['Province/State'])]['Country/Region'].unique()
 ```
@@ -2048,7 +2048,7 @@ footer = Div(
 ```
 
 The buttons and selections widgets on the right also quite easy to implement.
-Just give a list with labels and a paramter which signals what button is active.
+Just give a list with labels and a parameter which signals what button is active.
 Then add a callback function which will be triggered on clicking on the buttons.
 
 ```python
@@ -2118,3 +2118,304 @@ The `tabs` element in our case is the line plot in the upper left with the two t
 You could also select the layout element by iterating through some children layout elements, e.g. `layout.children[0].children[0]`.
 I did this in the beginning, but this is rather ugly and once you update your layout you manually have to update to correct child.
 Thankfully I discovered  `set_select` and can now search by a unique name of the element.
+
+
+To fill the dictionaries of the data source we use the following function:
+```python
+    def get_dict_from_df(self, df: pd.DataFrame, country_list: List[str], prefix: str):
+        """
+        returns the needed data in a dict
+        :param df: dataframe to fetch the data
+        :param country_list: list of countries for which the data should be fetched
+        :param prefix: which data should be fetched, confirmed, deaths or recovered (refers to the dataframe)
+        :return: dict with for keys
+        """
+        new_dict = {}
+        for country in country_list:
+            absolute_raw, absolute_rolling, absolute_trend, delta_raw, delta_rolling, delta_trend = \
+                self.get_lines(df, country, self.active_window_size)
+            country = replace_special_chars(country)
+            new_dict[f"{country}_{prefix}_{TOTAL_SUFF}_{PlotType.raw.name}"] = absolute_raw
+            new_dict[f"{country}_{prefix}_{TOTAL_SUFF}_{PlotType.average.name}"] = absolute_rolling
+            new_dict[f"{country}_{prefix}_{TOTAL_SUFF}_{PlotType.trend.name}"] = absolute_trend
+            new_dict[f"{country}_{prefix}_{DELTA_SUFF}_{PlotType.raw.name}"] = delta_raw
+            new_dict[f"{country}_{prefix}_{DELTA_SUFF}_{PlotType.average.name}"] = delta_rolling
+            new_dict[f"{country}_{prefix}_{DELTA_SUFF}_{PlotType.trend.name}"] = delta_trend
+            new_dict['x'] = x_date  # list(range(0, len(delta_raw)))
+        return new_dict
+
+```
+
+We iterate over all selected countries and get the needed data from the global pandas dataframes.
+In the key, we encode the country, the kind of data (confirmed, deaths, recovered), cumulative or daily and they kind data processing (raw, rolling average, and trend).
+We replace special characters and whitespaces in the country with number character.
+This is a bit of a hack, as the tooltip function only works with alphanumeric characters and there are no countries with numbers in the name.
+The `x_date` is also a global list with the dates for the x-axis, generated as follows:
+
+```python
+x_date = [pd.to_datetime(case_columns[0]) + timedelta(days=x) for x in range(0, len(case_columns))]
+```
+
+The return value of `get_dict_from_df` is the base of the central plotting function `generate_plot`.
+It decodes back the information from the dict keys, generates the correct y-axis, and plots the lines specified by the 
+current class state.
+
+
+```python
+    def generate_plot(self, source: ColumnDataSource):
+        """
+        do the plotting based on interactive elements
+        :param source: data source with the selected countries and the selected kind of data (confirmed, deaths, or
+        recovered)
+        :return: the plot layout in a tab
+        """
+        # global active_y_axis_type, active_tab
+        keys = source.data.keys()
+        if len(keys) == 0:
+            return self.get_tab_pane()
+        infected_numbers_new = []
+        infected_numbers_absolute = []
+
+        for k in keys:
+            if f"{DELTA_SUFF}_{PlotType.raw.name}" in k:
+                infected_numbers_new.append(max(source.data[k]))
+            elif f"{TOTAL_SUFF}_{PlotType.raw.name}" in k:
+                infected_numbers_absolute.append(max(source.data[k]))
+        y_range = self.calculate_y_axis_range(infected_numbers_new)
+        p_new = figure(title=f"{self.active_prefix.name} (new)", plot_height=400, plot_width=WIDTH, y_range=y_range,
+                       background_fill_color=BACKGROUND_COLOR, y_axis_type=self.active_y_axis_type.name)
+        y_range = self.calculate_y_axis_range(infected_numbers_absolute)
+        p_absolute = figure(title=f"{self.active_prefix.name} (absolute)", plot_height=400, plot_width=WIDTH,
+                            y_range=y_range,
+                            background_fill_color=BACKGROUND_COLOR, y_axis_type=self.active_y_axis_type.name)
+
+        selected_keys_absolute = []
+        selected_keys_new = []
+        for vals in source.data.keys():
+            if vals == 'x' in vals:
+                selected_keys_absolute.append(vals)
+                selected_keys_new.append(vals)
+                continue
+            tokenz = vals.split('_')
+            name = f"{revert_special_chars_replacement(tokenz[0])} ({tokenz[-1]})"
+            color = color_dict[tokenz[0]]
+            plt_type = PlotType[tokenz[-1]]
+            if (plt_type == PlotType.raw and self.active_plot_raw) or \
+                    (plt_type == PlotType.average and self.active_plot_average) or \
+                    (plt_type == PlotType.trend and self.active_plot_trend):
+                if TOTAL_SUFF in vals:
+                    selected_keys_absolute.append(vals)
+                    p_absolute.line('x', vals, source=source, line_dash=line_dict[plt_type].line_dash, color=color,
+                                    alpha=line_dict[plt_type].alpha, line_width=line_dict[plt_type].line_width,
+                                    line_cap='butt', legend_label=name)
+                else:
+                    selected_keys_new.append(vals)
+                    p_new.line('x', vals, source=source, line_dash=line_dict[plt_type].line_dash, color=color,
+                               alpha=line_dict[plt_type].alpha, line_width=line_dict[plt_type].line_width,
+                               line_cap='round', legend_label=name)
+        self.add_figure_attributes(p_absolute, selected_keys_absolute)
+        self.add_figure_attributes(p_new, selected_keys_new)
+
+        tab1 = Panel(child=p_new, title=f"{self.active_prefix.name} (daily)")
+        tab2 = Panel(child=p_absolute, title=f"{self.active_prefix.name} (cumulative)")
+        tabs = Tabs(tabs=[tab1, tab2], name=TAB_PANE)
+        if self.layout is not None:
+            tabs.active = self.get_tab_pane().active
+        return tabs
+```
+
+For the line colors we use a global dict with a country/color relationship.
+The color scheme is taken from  the package colorcet (I uses a dark scheme for best contrast against a grey background).
+
+```python
+import colorcet as cc
+color_dict = dict(zip(unique_countries_wo_special_chars,
+                      cc.b_glasbey_bw_minc_20_maxl_70[:len(unique_countries_wo_special_chars)]
+                      )
+                  )
+```
+
+Also the hover tooltip is generated from data source dict keys:
+
+```python
+    def generate_tool_tips(selected_keys) -> HoverTool:
+        """
+        string magic for the tool tips
+        :param selected_keys:
+        :return:
+        """
+
+        tooltips = [(f"{revert_special_chars_replacement(x.split('_')[0])} ({x.split('_')[-1]})",
+                     f"@{x}{{(0,0)}}") if x != 'x' else ('Date', '$x{%F}') for x in selected_keys]
+        hover = HoverTool(tooltips=tooltips,
+                          formatters={'$x': 'datetime'}
+                          )
+        return hover
+```
+
+The second plot, the world map, is generate with the following function:
+
+```python
+    def create_world_map(self):
+        """
+        draws the fancy world map and do some projection magic
+        :return:
+        """
+        tile_provider = get_provider(Vendors.CARTODBPOSITRON_RETINA)
+
+        tool_tips = [
+            ("(x,y)", "($x, $y)"),
+            ("country", "@country"),
+            ("number", "@num{(0,0)}")
+
+        ]
+        world_map = figure(width=WIDTH, height=400, x_range=(-BOUND, BOUND), y_range=(-10_000_000, 12_000_000),
+                           x_axis_type="mercator", y_axis_type="mercator", tooltips=tool_tips)
+        # world_map.axis.visible = False
+        world_map.add_tile(tile_provider)
+        self.world_circle_source = ColumnDataSource(
+            dict(x=x_coord, y=y_coord, num=self.active_df['total'],
+                 sizes=self.active_df['total'].apply(lambda d: ceil(log(d) * 4) if d > 1 else 1),
+                 country=self.active_df[ColumnNames.country.value]))
+        world_map.circle(x='x', y='y', size='sizes', source=self.world_circle_source, fill_color="red", fill_alpha=0.8)
+        return world_map
+```
+
+The tile provider determines the style of the map (an overview of the styles can be found [here](https://docs.bokeh.org/en/latest/docs/reference/tile_providers.html)). 
+Again, the data is stored in a `ColumnDataSource` and a dict.
+The circles are a logarithmic representations of the numbers in the selected global dataframe.
+One thing we have to take care of is the projection of the coordinates.
+The John Hopkins data gives the coordinates in the World Geodetic System notation (a 3D representation with longitude and latitude as used in GPS).
+In contrast, for the 2D plot we need a projection of the 3D coordinated to a 2D space.
+The most used projection is the Mercator projection.
+We can do the transformation with the `pyproj` package.
+
+```python
+from pyproj import Transformer
+# Transform lat and long (World Geodetic System, GPS, EPSG:4326) to x and y  (Pseudo-Mercator, "epsg:3857")
+transformer = Transformer.from_crs("epsg:4326", "epsg:3857")
+x_coord, y_coord = transformer.transform(df_coord[ColumnNames.lat.value].values,
+                                         df_coord[ColumnNames.long.value].values)
+``` 
+
+## Adding a Rest-Api
+
+We finished the layout of our dashboard, but each time we start it will have the same countries and plot types selected.
+If we want to share a specific plot a Rest-Api would be neat.
+For example, something like the following request:
+
+```http request
+https://covid-19-bokeh-dashboard.herokuapp.com/dashboard?country=Germany&country=Finland&per_capita=True&plot_raw=False
+```
+After the URL, we append a `?` and then key/value pairs concatenated with `=`.
+Note here, that we can have have multiple values with the same key (important for the country selection).
+
+But how do we get these key/value pairs into our dashboard?
+Fortunately, bokeh runs on a Tornardo webserver which has the needed functionality.
+We can access them as follows:
+
+```python
+args = curdoc().session_context.request.arguments
+``` 
+The keys in this `àrgs` dict are already strings, but the values are still encoded as byte strings and we need to encode them back with the `to_basestring` function from Tornardo.
+
+The overall parsing function looks like this:
+
+```python
+def parse_arguments(arguments: dict):
+    """
+    parse get arguments of rest api
+    :param arguments: as the dict given from tornardo
+    :return:
+    """
+    arguments = {k.lower(): v for k, v in arguments.items()}
+    country_list = ['Germany']
+    if 'country' in arguments:
+        country_list = [countries_lower_dict[to_basestring(c).lower()] for c in arguments['country'] if
+                        to_basestring(c).lower() in countries_lower_dict.keys()]
+    if len(country_list) == 0:
+        country_list = ['Germany']
+    active_per_capita = parse_bool(arguments, 'per_capita', False)
+    active_window_size = parse_int(arguments, 'window_size', 7)
+    active_plot_raw = parse_bool(arguments, 'plot_raw')
+    active_plot_average = parse_bool(arguments, 'plot_average')
+    active_plot_trend = parse_bool(arguments, 'plot_trend')
+    active_average = Average.median if 'average' in arguments and to_basestring(
+        arguments['average'][0]).lower() == 'median' else Average.mean
+    active_y_axis_type = Scale.log if 'scale' in arguments and to_basestring(
+        arguments['scale'][0]).lower() == Scale.log.name else Scale.linear
+    active_prefix = Prefix.confirmed
+    if 'data' in arguments:
+        val = to_basestring(arguments['data'][0]).lower()
+        if val in Prefix.deaths.name:
+            active_prefix = Prefix.deaths
+        elif val in Prefix.recovered.name:
+            active_prefix = Prefix.recovered
+    return country_list, active_per_capita, active_window_size, active_plot_raw, active_plot_average, \
+           active_plot_trend, active_average, active_y_axis_type, active_prefix
+```
+
+The results are the used to construct the dashboard:
+
+```python
+country_list_, active_per_capita_, active_window_size_, active_plot_raw_, active_plot_average_, \
+active_plot_trend_, active_average_, active_y_axis_type_, active_prefix_ = parse_arguments(args)
+
+dash = Dashboard(country_list=country_list_,
+                 active_per_capita=active_per_capita_,
+                 active_window_size=active_window_size_,
+                 active_plot_raw=active_plot_raw_,
+                 active_plot_average=active_plot_average_,
+                 active_plot_trend=active_plot_trend_,
+                 active_y_axis_type=active_y_axis_type_,
+                 active_prefix=active_prefix_)
+```
+
+The last thing we need to do is to call the layout function:
+
+```python
+dash.do_layout()
+```
+
+Now we can start up the dashboard in our console:
+
+```
+bokeh serve dashboar.py
+```
+
+And see the result at `http://localhost:5006/dashboard`.
+
+## Hosting the Dashboard at Heroku
+
+It nice to check the dashboard on our local machine, but hosting the whole thing on the internet would be great.
+After some search I found Heroku, where you can host Python apps for free.
+The easiest thing is to connect your Github repo with Heroku and with each push you deploy the app.
+Further, you need a `requirements.txt` with your Python dependencies.
+You can generate this file with:
+
+```
+pip freeze > requirements.txt
+ ``` 
+
+I personally use Anaconda as a package manager and at the first try my `requirements.txt` did not work out of the box with Heroku (they use virtual env and pip).
+In the end, I created a new local conda environment and install the `requirements.txt` through pip to test if everything works.
+
+Further you need to add a `Procfile` to your repository.
+In the dashboard case, it has the following content:
+`
+web: bokeh serve --port=$PORT --address=0.0.0.0 --allow-websocket-origin=covid-19-bokeh-dashboard.herokuapp.com --use-xheaders dashboard.py
+`
+
+One final thing to notice, the Heroku app will be shutdown after some time and has to restart at the next request.
+This can take some time.
+So you can regularly access your app to prevent this.
+
+
+## Conclusion
+
+Bokeh is a really great library to create interactive plots with all the widgets you could imagine.
+And all this without getting your hands dirty with javascript.
+It is also very good for visualizing streaming data on the fly, e.g., for monitoring systems etc.
+It will stay my tool of choice for these kind of tasks.
+For other interactive plotting I also like the wonderful [Altair](https://altair-viz.github.io/) package.
+You can find the complete source code of the dashboard, notebooks, and config files at my [Github](https://github.com/weichslgartner/covid_dashboard/).
