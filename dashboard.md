@@ -27,6 +27,7 @@ So what is the first thing you do if you have csv files?
 You fire up a jupyter notebook (personally I use jupyter lab) and explore the data with pandas and some numpy.
 
 So let's get started and import these two wonderful libraries:
+
 ```python
 import pandas as pd
 import numpy as np
@@ -38,8 +39,10 @@ url_confirmed = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/maste
 url_death = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
 url_recovered = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
 ```
+
 These files are updated daily, so we get the latest version.
 In pandas you can directly paste the URL into the read_csv function and load the remote file into a dataframe.
+
 ```python
 df = pd.read_csv(url_confirmed) 
 ```
@@ -153,9 +156,11 @@ So we have columns with the "Province/State", "Country/Region", the GPS coordina
 Each day is one column and JHU will add one column every day.
 
 To get names of the confirmed cases columns we get all column names with `df.columns` and ignore the first four columns.
+
 ```python
 case_columns=df.columns[4:]
 ```
+
 Now, lets plot the data of a single country. 
 First, we get the index of the wanted row and then select the values with the `loc[index,[columns]]` access.
 A little `plot` in the end and we have our first simple visualization.
@@ -164,7 +169,9 @@ A little `plot` in the end and we have our first simple visualization.
 german_index = df.loc[df['Country/Region']=='Germany'].index[0]
 df.loc[german_index,case_columns].plot()
 ```
+
 ![png](img/dashboard/output_5_1.png)
+
 
 So we see that the data is cumulative and always increasing.
 To get the new cases for every day we can just use `diff()` to subtract each succeeding columns.
@@ -174,7 +181,8 @@ df.loc[german_index,case_columns].diff().plot()
 ```
 
 ![png](img/dashboard/output_6_1.png)
-Looks a bit noisy
+
+Looks a bit noisy.
 If we would zoom in, we would see a pattern every seven days.
 The well known seasonality of a week.
 We can smoothen the plot by a rolling window (with the windows size of seven) and averaging (we use numpy mean here).
