@@ -22,7 +22,7 @@ Afterwards, I also explain briefly how you can use the Rest-Api and host a Pytho
 ## The Data
 
 The root of all visualization is always the data.
-Thankfully, the Johns Hopkins University offers raw data in csv format at their [github account](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data).
+Thankfully, the Johns Hopkins University (JHU) offers raw data in csv format at their [github account](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data).
 So what is the first thing you do if you have csv files? 
 You fire up a jupyter notebook (personally I use jupyter lab) and explore the data with pandas and some numpy.
 
@@ -159,11 +159,13 @@ case_columns=df.columns[4:]
 Now, lets plot the data of a single country. 
 First, we get the index of the wanted row and then select the values with the `loc[index,[columns]]` access.
 A little `plot` in the end and we have our first simple visualization.
+
 ```python
 german_index = df.loc[df['Country/Region']=='Germany'].index[0]
 df.loc[german_index,case_columns].plot()
 ```
 ![png](img/dashboard/output_5_1.png)
+
 So we see that the data is cumulative and always increasing.
 To get the new cases for every day we can just use `diff()` to subtract each succeeding columns.
 
@@ -183,6 +185,7 @@ df.loc[german_index,case_columns].diff().rolling(window=7, axis=0).apply(np.mean
 ```
 
 ![png](img/dashboard/output_7_1.png)
+
 This looks much better now.
 Later in the dashboard, we make the window size and the average function interactive parameters.
 
@@ -688,19 +691,6 @@ df[df['Country/Region']=='China']
 
 
 
-```python
-idx = df.groupby('Country/Region')[case_columns[-1]].transform(max) == df[case_columns[-1]]
-```
-
-
-```python
-coord_df = df.loc[idx,df.columns[0:4]]
-```
-
-
-```python
-coord_df[coord_df['Country/Region']=='China']
-```
 
 
 
