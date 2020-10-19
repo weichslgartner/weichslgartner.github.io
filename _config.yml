@@ -26,7 +26,9 @@ navbar-links:
   About Me: "aboutme"
   CV: "cv"
   Publications: "publications"
-  Projects: "projects"
+  Projects:
+    - Kicker Manager Optimization: "kicker"
+    - Bokeh Covid Dashboard: "dashboard"
   Music: "music"
  
 
