@@ -1,3 +1,10 @@
+---
+layout: page
+title: Projects
+subtitle: Creating Bokeh Covid-19 Dashboard
+comments: true
+---
+
 # Creating a Covid-19 Dashboard with bokeh, pandas, numpy, etc.
 
 There is a plethora of Covid-19 dashboards in the depths of the internet.
@@ -42,6 +49,8 @@ With the `head()` we can get the first rows of the dataframe and see how the dat
 df.head()
 ```
 
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -64,23 +73,11 @@ df.head()
       <th>Country/Region</th>
       <th>Lat</th>
       <th>Long</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
       <th>...</th>
-      <th>10/3/20</th>
-      <th>10/4/20</th>
-      <th>10/5/20</th>
-      <th>10/6/20</th>
-      <th>10/7/20</th>
-      <th>10/8/20</th>
-      <th>10/9/20</th>
-      <th>10/10/20</th>
-      <th>10/11/20</th>
-      <th>10/12/20</th>
+      <th>10/14/20</th>
+      <th>10/15/20</th>
+      <th>10/16/20</th>
+      <th>10/17/20</th>
     </tr>
   </thead>
   <tbody>
@@ -90,23 +87,11 @@ df.head()
       <td>Afghanistan</td>
       <td>33.93911</td>
       <td>67.709953</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>39297</td>
-      <td>39341</td>
-      <td>39422</td>
-      <td>39486</td>
-      <td>39548</td>
-      <td>39616</td>
-      <td>39693</td>
-      <td>39703</td>
-      <td>39799</td>
-      <td>39870</td>
+      <td>39994</td>
+      <td>40026</td>
+      <td>40073</td>
+      <td>40141</td>
     </tr>
     <tr>
       <th>1</th>
@@ -114,23 +99,11 @@ df.head()
       <td>Albania</td>
       <td>41.15330</td>
       <td>20.168300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>14117</td>
-      <td>14266</td>
-      <td>14410</td>
-      <td>14568</td>
-      <td>14730</td>
-      <td>14899</td>
-      <td>15066</td>
-      <td>15231</td>
-      <td>15399</td>
-      <td>15570</td>
+      <td>15955</td>
+      <td>16212</td>
+      <td>16501</td>
+      <td>16774</td>
     </tr>
     <tr>
       <th>2</th>
@@ -138,23 +111,11 @@ df.head()
       <td>Algeria</td>
       <td>28.03390</td>
       <td>1.659600</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>51995</td>
-      <td>52136</td>
-      <td>52270</td>
-      <td>52399</td>
-      <td>52520</td>
-      <td>52658</td>
-      <td>52804</td>
-      <td>52940</td>
-      <td>53072</td>
-      <td>53325</td>
+      <td>53584</td>
+      <td>53777</td>
+      <td>53998</td>
+      <td>54203</td>
     </tr>
     <tr>
       <th>3</th>
@@ -162,23 +123,11 @@ df.head()
       <td>Andorra</td>
       <td>42.50630</td>
       <td>1.521800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>2110</td>
-      <td>2110</td>
-      <td>2370</td>
-      <td>2370</td>
-      <td>2568</td>
-      <td>2568</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2995</td>
+      <td>3190</td>
+      <td>3190</td>
+      <td>3377</td>
+      <td>3377</td>
     </tr>
     <tr>
       <th>4</th>
@@ -186,28 +135,20 @@ df.head()
       <td>Angola</td>
       <td>-11.20270</td>
       <td>17.873900</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>5370</td>
-      <td>5402</td>
-      <td>5530</td>
-      <td>5725</td>
-      <td>5725</td>
-      <td>5958</td>
-      <td>6031</td>
-      <td>6246</td>
-      <td>6366</td>
-      <td>6488</td>
+      <td>6846</td>
+      <td>7096</td>
+      <td>7222</td>
+      <td>7462</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 269 columns</p>
+<p>5 rows × 274 columns</p>
 </div>
+
+
+
+
 So we have columns with the "Province/State", "Country/Region", the GPS coordinates and then the number of absolute confirmed cases.
 Each day is one column and JHU will add one column every day.
 
@@ -311,6 +252,8 @@ df[df['Country/Region']=='China']
 
 
 
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -333,23 +276,11 @@ df[df['Country/Region']=='China']
       <th>Country/Region</th>
       <th>Lat</th>
       <th>Long</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
       <th>...</th>
-      <th>10/3/20</th>
-      <th>10/4/20</th>
-      <th>10/5/20</th>
-      <th>10/6/20</th>
-      <th>10/7/20</th>
-      <th>10/8/20</th>
-      <th>10/9/20</th>
-      <th>10/10/20</th>
-      <th>10/11/20</th>
-      <th>10/12/20</th>
+      <th>10/14/20</th>
+      <th>10/15/20</th>
+      <th>10/16/20</th>
+      <th>10/17/20</th>
     </tr>
   </thead>
   <tbody>
@@ -359,19 +290,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>31.8257</td>
       <td>117.2264</td>
-      <td>1</td>
-      <td>9</td>
-      <td>15</td>
-      <td>39</td>
-      <td>60</td>
-      <td>70</td>
       <td>...</td>
-      <td>991</td>
-      <td>991</td>
-      <td>991</td>
-      <td>991</td>
-      <td>991</td>
-      <td>991</td>
       <td>991</td>
       <td>991</td>
       <td>991</td>
@@ -383,21 +302,9 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>40.1824</td>
       <td>116.4142</td>
-      <td>14</td>
-      <td>22</td>
-      <td>36</td>
-      <td>41</td>
-      <td>68</td>
-      <td>80</td>
       <td>...</td>
-      <td>936</td>
-      <td>936</td>
-      <td>936</td>
-      <td>936</td>
-      <td>936</td>
-      <td>936</td>
-      <td>936</td>
-      <td>936</td>
+      <td>937</td>
+      <td>937</td>
       <td>937</td>
       <td>937</td>
     </tr>
@@ -407,23 +314,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>30.0572</td>
       <td>107.8740</td>
-      <td>6</td>
-      <td>9</td>
-      <td>27</td>
-      <td>57</td>
-      <td>75</td>
-      <td>110</td>
       <td>...</td>
       <td>585</td>
-      <td>585</td>
-      <td>585</td>
-      <td>585</td>
-      <td>585</td>
-      <td>585</td>
-      <td>585</td>
-      <td>585</td>
-      <td>585</td>
-      <td>585</td>
+      <td>586</td>
+      <td>586</td>
+      <td>586</td>
     </tr>
     <tr>
       <th>59</th>
@@ -431,23 +326,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>26.0789</td>
       <td>117.9874</td>
-      <td>1</td>
-      <td>5</td>
-      <td>10</td>
-      <td>18</td>
-      <td>35</td>
-      <td>59</td>
       <td>...</td>
-      <td>411</td>
-      <td>413</td>
-      <td>413</td>
-      <td>413</td>
-      <td>413</td>
-      <td>414</td>
-      <td>414</td>
-      <td>415</td>
       <td>416</td>
-      <td>416</td>
+      <td>417</td>
+      <td>417</td>
+      <td>417</td>
     </tr>
     <tr>
       <th>60</th>
@@ -455,19 +338,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>35.7518</td>
       <td>104.2861</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>4</td>
-      <td>7</td>
-      <td>14</td>
       <td>...</td>
-      <td>170</td>
-      <td>170</td>
-      <td>170</td>
-      <td>170</td>
-      <td>170</td>
-      <td>170</td>
       <td>170</td>
       <td>170</td>
       <td>170</td>
@@ -479,23 +350,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>23.3417</td>
       <td>113.4244</td>
-      <td>26</td>
-      <td>32</td>
-      <td>53</td>
-      <td>78</td>
-      <td>111</td>
-      <td>151</td>
       <td>...</td>
-      <td>1840</td>
-      <td>1841</td>
-      <td>1846</td>
-      <td>1848</td>
-      <td>1848</td>
-      <td>1851</td>
-      <td>1852</td>
-      <td>1858</td>
-      <td>1861</td>
-      <td>1863</td>
+      <td>1873</td>
+      <td>1875</td>
+      <td>1877</td>
+      <td>1881</td>
     </tr>
     <tr>
       <th>62</th>
@@ -503,19 +362,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>23.8298</td>
       <td>108.7881</td>
-      <td>2</td>
-      <td>5</td>
-      <td>23</td>
-      <td>23</td>
-      <td>36</td>
-      <td>46</td>
       <td>...</td>
-      <td>260</td>
-      <td>260</td>
-      <td>260</td>
-      <td>260</td>
-      <td>260</td>
-      <td>260</td>
       <td>260</td>
       <td>260</td>
       <td>260</td>
@@ -527,19 +374,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>26.8154</td>
       <td>106.8748</td>
-      <td>1</td>
-      <td>3</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td>7</td>
       <td>...</td>
-      <td>147</td>
-      <td>147</td>
-      <td>147</td>
-      <td>147</td>
-      <td>147</td>
-      <td>147</td>
       <td>147</td>
       <td>147</td>
       <td>147</td>
@@ -551,19 +386,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>19.1959</td>
       <td>109.7453</td>
-      <td>4</td>
-      <td>5</td>
-      <td>8</td>
-      <td>19</td>
-      <td>22</td>
-      <td>33</td>
       <td>...</td>
-      <td>171</td>
-      <td>171</td>
-      <td>171</td>
-      <td>171</td>
-      <td>171</td>
-      <td>171</td>
       <td>171</td>
       <td>171</td>
       <td>171</td>
@@ -575,23 +398,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>39.5490</td>
       <td>116.1306</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>8</td>
-      <td>13</td>
-      <td>18</td>
       <td>...</td>
-      <td>365</td>
-      <td>365</td>
-      <td>365</td>
-      <td>365</td>
-      <td>365</td>
-      <td>365</td>
-      <td>365</td>
-      <td>365</td>
-      <td>367</td>
-      <td>367</td>
+      <td>368</td>
+      <td>368</td>
+      <td>368</td>
+      <td>368</td>
     </tr>
     <tr>
       <th>66</th>
@@ -599,19 +410,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>47.8620</td>
       <td>127.7615</td>
-      <td>0</td>
-      <td>2</td>
-      <td>4</td>
-      <td>9</td>
-      <td>15</td>
-      <td>21</td>
       <td>...</td>
-      <td>948</td>
-      <td>948</td>
-      <td>948</td>
-      <td>948</td>
-      <td>948</td>
-      <td>948</td>
       <td>948</td>
       <td>948</td>
       <td>948</td>
@@ -623,19 +422,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>37.8957</td>
       <td>114.9042</td>
-      <td>5</td>
-      <td>5</td>
-      <td>9</td>
-      <td>32</td>
-      <td>83</td>
-      <td>128</td>
       <td>...</td>
-      <td>1281</td>
-      <td>1281</td>
-      <td>1281</td>
-      <td>1281</td>
-      <td>1281</td>
-      <td>1281</td>
       <td>1281</td>
       <td>1281</td>
       <td>1281</td>
@@ -647,23 +434,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>22.3000</td>
       <td>114.2000</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>5</td>
-      <td>8</td>
-      <td>8</td>
       <td>...</td>
-      <td>5108</td>
-      <td>5113</td>
-      <td>5124</td>
-      <td>5132</td>
-      <td>5143</td>
-      <td>5161</td>
-      <td>5169</td>
-      <td>5175</td>
-      <td>5182</td>
-      <td>5193</td>
+      <td>5201</td>
+      <td>5213</td>
+      <td>5220</td>
+      <td>5237</td>
     </tr>
     <tr>
       <th>69</th>
@@ -671,19 +446,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>30.9756</td>
       <td>112.2707</td>
-      <td>444</td>
-      <td>444</td>
-      <td>549</td>
-      <td>761</td>
-      <td>1058</td>
-      <td>1423</td>
       <td>...</td>
-      <td>68139</td>
-      <td>68139</td>
-      <td>68139</td>
-      <td>68139</td>
-      <td>68139</td>
-      <td>68139</td>
       <td>68139</td>
       <td>68139</td>
       <td>68139</td>
@@ -695,19 +458,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>27.6104</td>
       <td>111.7088</td>
-      <td>4</td>
-      <td>9</td>
-      <td>24</td>
-      <td>43</td>
-      <td>69</td>
-      <td>100</td>
       <td>...</td>
-      <td>1019</td>
-      <td>1019</td>
-      <td>1019</td>
-      <td>1019</td>
-      <td>1019</td>
-      <td>1019</td>
       <td>1019</td>
       <td>1019</td>
       <td>1019</td>
@@ -719,23 +470,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>44.0935</td>
       <td>113.9448</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>7</td>
-      <td>7</td>
-      <td>11</td>
       <td>...</td>
-      <td>266</td>
-      <td>268</td>
-      <td>268</td>
-      <td>268</td>
-      <td>268</td>
-      <td>268</td>
-      <td>268</td>
-      <td>268</td>
-      <td>269</td>
       <td>270</td>
+      <td>275</td>
+      <td>275</td>
+      <td>275</td>
     </tr>
     <tr>
       <th>72</th>
@@ -743,23 +482,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>32.9711</td>
       <td>119.4550</td>
-      <td>1</td>
-      <td>5</td>
-      <td>9</td>
-      <td>18</td>
-      <td>33</td>
-      <td>47</td>
       <td>...</td>
-      <td>666</td>
       <td>667</td>
-      <td>667</td>
-      <td>667</td>
-      <td>667</td>
-      <td>667</td>
-      <td>667</td>
-      <td>667</td>
-      <td>667</td>
-      <td>667</td>
+      <td>669</td>
+      <td>669</td>
+      <td>669</td>
     </tr>
     <tr>
       <th>73</th>
@@ -767,19 +494,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>27.6140</td>
       <td>115.7221</td>
-      <td>2</td>
-      <td>7</td>
-      <td>18</td>
-      <td>18</td>
-      <td>36</td>
-      <td>72</td>
       <td>...</td>
-      <td>935</td>
-      <td>935</td>
-      <td>935</td>
-      <td>935</td>
-      <td>935</td>
-      <td>935</td>
       <td>935</td>
       <td>935</td>
       <td>935</td>
@@ -791,19 +506,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>43.6661</td>
       <td>126.1923</td>
-      <td>0</td>
-      <td>1</td>
-      <td>3</td>
-      <td>4</td>
-      <td>4</td>
-      <td>6</td>
       <td>...</td>
-      <td>157</td>
-      <td>157</td>
-      <td>157</td>
-      <td>157</td>
-      <td>157</td>
-      <td>157</td>
       <td>157</td>
       <td>157</td>
       <td>157</td>
@@ -815,21 +518,9 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>41.2956</td>
       <td>122.6085</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>17</td>
-      <td>21</td>
-      <td>27</td>
       <td>...</td>
-      <td>271</td>
-      <td>271</td>
-      <td>271</td>
-      <td>271</td>
-      <td>271</td>
-      <td>273</td>
-      <td>275</td>
-      <td>276</td>
+      <td>280</td>
+      <td>280</td>
       <td>280</td>
       <td>280</td>
     </tr>
@@ -839,19 +530,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>22.1667</td>
       <td>113.5500</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>5</td>
-      <td>6</td>
       <td>...</td>
-      <td>46</td>
-      <td>46</td>
-      <td>46</td>
-      <td>46</td>
-      <td>46</td>
-      <td>46</td>
       <td>46</td>
       <td>46</td>
       <td>46</td>
@@ -863,19 +542,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>37.2692</td>
       <td>106.1655</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>7</td>
       <td>...</td>
-      <td>75</td>
-      <td>75</td>
-      <td>75</td>
-      <td>75</td>
-      <td>75</td>
-      <td>75</td>
       <td>75</td>
       <td>75</td>
       <td>75</td>
@@ -887,19 +554,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>35.7452</td>
       <td>95.9956</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>6</td>
       <td>...</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
-      <td>18</td>
       <td>18</td>
       <td>18</td>
       <td>18</td>
@@ -911,23 +566,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>35.1917</td>
       <td>108.8701</td>
-      <td>0</td>
-      <td>3</td>
-      <td>5</td>
-      <td>15</td>
-      <td>22</td>
-      <td>35</td>
       <td>...</td>
-      <td>413</td>
-      <td>413</td>
-      <td>414</td>
-      <td>414</td>
-      <td>414</td>
-      <td>425</td>
-      <td>428</td>
-      <td>428</td>
-      <td>428</td>
-      <td>428</td>
+      <td>433</td>
+      <td>433</td>
+      <td>434</td>
+      <td>436</td>
     </tr>
     <tr>
       <th>80</th>
@@ -935,23 +578,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>36.3427</td>
       <td>118.1498</td>
-      <td>2</td>
-      <td>6</td>
-      <td>15</td>
-      <td>27</td>
-      <td>46</td>
-      <td>75</td>
       <td>...</td>
-      <td>832</td>
-      <td>832</td>
-      <td>832</td>
-      <td>832</td>
-      <td>832</td>
-      <td>832</td>
-      <td>832</td>
-      <td>832</td>
-      <td>838</td>
-      <td>838</td>
+      <td>845</td>
+      <td>845</td>
+      <td>845</td>
+      <td>845</td>
     </tr>
     <tr>
       <th>81</th>
@@ -959,23 +590,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>31.2020</td>
       <td>121.4491</td>
-      <td>9</td>
-      <td>16</td>
-      <td>20</td>
-      <td>33</td>
-      <td>40</td>
-      <td>53</td>
       <td>...</td>
-      <td>1012</td>
-      <td>1022</td>
-      <td>1024</td>
-      <td>1025</td>
-      <td>1030</td>
-      <td>1036</td>
-      <td>1038</td>
-      <td>1048</td>
-      <td>1053</td>
-      <td>1056</td>
+      <td>1064</td>
+      <td>1075</td>
+      <td>1080</td>
+      <td>1085</td>
     </tr>
     <tr>
       <th>82</th>
@@ -983,21 +602,9 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>37.5777</td>
       <td>112.2922</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>6</td>
-      <td>9</td>
-      <td>13</td>
       <td>...</td>
-      <td>204</td>
-      <td>205</td>
-      <td>205</td>
-      <td>206</td>
-      <td>206</td>
-      <td>206</td>
-      <td>206</td>
-      <td>206</td>
+      <td>208</td>
+      <td>208</td>
       <td>208</td>
       <td>208</td>
     </tr>
@@ -1007,23 +614,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>30.6171</td>
       <td>102.7103</td>
-      <td>5</td>
-      <td>8</td>
-      <td>15</td>
-      <td>28</td>
-      <td>44</td>
-      <td>69</td>
       <td>...</td>
-      <td>701</td>
-      <td>704</td>
-      <td>707</td>
-      <td>710</td>
-      <td>713</td>
-      <td>713</td>
-      <td>718</td>
-      <td>721</td>
-      <td>722</td>
       <td>723</td>
+      <td>723</td>
+      <td>724</td>
+      <td>725</td>
     </tr>
     <tr>
       <th>84</th>
@@ -1031,23 +626,11 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>39.3054</td>
       <td>117.3230</td>
-      <td>4</td>
-      <td>4</td>
-      <td>8</td>
-      <td>10</td>
-      <td>14</td>
-      <td>23</td>
       <td>...</td>
-      <td>241</td>
-      <td>241</td>
-      <td>242</td>
-      <td>242</td>
-      <td>242</td>
-      <td>242</td>
-      <td>244</td>
-      <td>244</td>
       <td>245</td>
-      <td>245</td>
+      <td>247</td>
+      <td>251</td>
+      <td>252</td>
     </tr>
     <tr>
       <th>85</th>
@@ -1055,19 +638,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>31.6927</td>
       <td>88.0924</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
@@ -1079,19 +650,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>41.1129</td>
       <td>85.2401</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
       <td>...</td>
-      <td>902</td>
-      <td>902</td>
-      <td>902</td>
-      <td>902</td>
-      <td>902</td>
-      <td>902</td>
       <td>902</td>
       <td>902</td>
       <td>902</td>
@@ -1103,19 +662,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>24.9740</td>
       <td>101.4870</td>
-      <td>1</td>
-      <td>2</td>
-      <td>5</td>
-      <td>11</td>
-      <td>16</td>
-      <td>26</td>
       <td>...</td>
-      <td>211</td>
-      <td>211</td>
-      <td>211</td>
-      <td>211</td>
-      <td>211</td>
-      <td>211</td>
       <td>211</td>
       <td>211</td>
       <td>211</td>
@@ -1127,19 +674,7 @@ df[df['Country/Region']=='China']
       <td>China</td>
       <td>29.1832</td>
       <td>120.0934</td>
-      <td>10</td>
-      <td>27</td>
-      <td>43</td>
-      <td>62</td>
-      <td>104</td>
-      <td>128</td>
       <td>...</td>
-      <td>1282</td>
-      <td>1282</td>
-      <td>1282</td>
-      <td>1282</td>
-      <td>1283</td>
-      <td>1283</td>
       <td>1283</td>
       <td>1283</td>
       <td>1283</td>
@@ -1147,9 +682,64 @@ df[df['Country/Region']=='China']
     </tr>
   </tbody>
 </table>
-<p>33 rows × 269 columns</p>
+<p>33 rows × 274 columns</p>
 </div>
 
+
+
+
+```python
+idx = df.groupby('Country/Region')[case_columns[-1]].transform(max) == df[case_columns[-1]]
+```
+
+
+```python
+coord_df = df.loc[idx,df.columns[0:4]]
+```
+
+
+```python
+coord_df[coord_df['Country/Region']=='China']
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Province/State</th>
+      <th>Country/Region</th>
+      <th>Lat</th>
+      <th>Long</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>69</th>
+      <td>Hubei</td>
+      <td>China</td>
+      <td>30.9756</td>
+      <td>112.2707</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 As the listing of states and provinces is very arbitrary (maybe in the beginning of the pandemic 
 a more detailed view on China was useful), I decided for a compromise.
@@ -1221,6 +811,8 @@ df
 
 
 
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1243,38 +835,14 @@ df
       <th>1/23/20</th>
       <th>1/24/20</th>
       <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>1/28/20</th>
-      <th>1/29/20</th>
-      <th>1/30/20</th>
-      <th>1/31/20</th>
       <th>...</th>
-      <th>10/3/20</th>
-      <th>10/4/20</th>
-      <th>10/5/20</th>
-      <th>10/6/20</th>
-      <th>10/7/20</th>
-      <th>10/8/20</th>
-      <th>10/9/20</th>
-      <th>10/10/20</th>
-      <th>10/11/20</th>
-      <th>10/12/20</th>
+      <th>10/14/20</th>
+      <th>10/15/20</th>
+      <th>10/16/20</th>
+      <th>10/17/20</th>
     </tr>
     <tr>
       <th>Country/Region</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1293,23 +861,11 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>39297</td>
-      <td>39341</td>
-      <td>39422</td>
-      <td>39486</td>
-      <td>39548</td>
-      <td>39616</td>
-      <td>39693</td>
-      <td>39703</td>
-      <td>39799</td>
-      <td>39870</td>
+      <td>39994</td>
+      <td>40026</td>
+      <td>40073</td>
+      <td>40141</td>
     </tr>
     <tr>
       <th>Albania</th>
@@ -1317,23 +873,11 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>14117</td>
-      <td>14266</td>
-      <td>14410</td>
-      <td>14568</td>
-      <td>14730</td>
-      <td>14899</td>
-      <td>15066</td>
-      <td>15231</td>
-      <td>15399</td>
-      <td>15570</td>
+      <td>15955</td>
+      <td>16212</td>
+      <td>16501</td>
+      <td>16774</td>
     </tr>
     <tr>
       <th>Algeria</th>
@@ -1341,23 +885,11 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>51995</td>
-      <td>52136</td>
-      <td>52270</td>
-      <td>52399</td>
-      <td>52520</td>
-      <td>52658</td>
-      <td>52804</td>
-      <td>52940</td>
-      <td>53072</td>
-      <td>53325</td>
+      <td>53584</td>
+      <td>53777</td>
+      <td>53998</td>
+      <td>54203</td>
     </tr>
     <tr>
       <th>Andorra</th>
@@ -1365,23 +897,11 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>2110</td>
-      <td>2110</td>
-      <td>2370</td>
-      <td>2370</td>
-      <td>2568</td>
-      <td>2568</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2995</td>
+      <td>3190</td>
+      <td>3190</td>
+      <td>3377</td>
+      <td>3377</td>
     </tr>
     <tr>
       <th>Angola</th>
@@ -1389,38 +909,14 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>5370</td>
-      <td>5402</td>
-      <td>5530</td>
-      <td>5725</td>
-      <td>5725</td>
-      <td>5958</td>
-      <td>6031</td>
-      <td>6246</td>
-      <td>6366</td>
-      <td>6488</td>
+      <td>6846</td>
+      <td>7096</td>
+      <td>7222</td>
+      <td>7462</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1437,23 +933,11 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>41078</td>
-      <td>41498</td>
-      <td>41957</td>
-      <td>42432</td>
-      <td>42840</td>
-      <td>43256</td>
-      <td>43664</td>
-      <td>43945</td>
-      <td>44299</td>
-      <td>44684</td>
+      <td>45658</td>
+      <td>46100</td>
+      <td>46434</td>
+      <td>46746</td>
     </tr>
     <tr>
       <th>Western Sahara</th>
@@ -1461,19 +945,7 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
       <td>10</td>
       <td>10</td>
       <td>10</td>
@@ -1485,23 +957,11 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>2041</td>
-      <td>2041</td>
-      <td>2041</td>
-      <td>2047</td>
-      <td>2049</td>
-      <td>2050</td>
-      <td>2051</td>
-      <td>2051</td>
-      <td>2052</td>
-      <td>2052</td>
+      <td>2053</td>
+      <td>2053</td>
+      <td>2055</td>
+      <td>2055</td>
     </tr>
     <tr>
       <th>Zambia</th>
@@ -1509,23 +969,11 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>14974</td>
-      <td>15052</td>
-      <td>15089</td>
-      <td>15170</td>
-      <td>15224</td>
-      <td>15301</td>
-      <td>15339</td>
-      <td>15415</td>
-      <td>15458</td>
-      <td>15549</td>
+      <td>15616</td>
+      <td>15659</td>
+      <td>15659</td>
+      <td>15789</td>
     </tr>
     <tr>
       <th>Zimbabwe</th>
@@ -1533,28 +981,17 @@ df
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>7885</td>
-      <td>7888</td>
-      <td>7898</td>
-      <td>7915</td>
-      <td>7919</td>
-      <td>7951</td>
-      <td>7994</td>
-      <td>8010</td>
-      <td>8011</td>
-      <td>8021</td>
+      <td>8055</td>
+      <td>8075</td>
+      <td>8099</td>
+      <td>8110</td>
     </tr>
   </tbody>
 </table>
-<p>189 rows × 265 columns</p>
+<p>189 rows × 270 columns</p>
 </div>
+
 
 
 To calculate the relative number of cases per persons in a country we need the population numbers.
@@ -1662,6 +1099,9 @@ df_w_pop
 ```
 
 
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1684,21 +1124,9 @@ df_w_pop
       <th>1/23/20</th>
       <th>1/24/20</th>
       <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>1/28/20</th>
-      <th>1/29/20</th>
-      <th>1/30/20</th>
-      <th>1/31/20</th>
       <th>...</th>
-      <th>10/5/20</th>
-      <th>10/6/20</th>
-      <th>10/7/20</th>
-      <th>10/8/20</th>
-      <th>10/9/20</th>
-      <th>10/10/20</th>
-      <th>10/11/20</th>
-      <th>10/12/20</th>
+      <th>10/16/20</th>
+      <th>10/17/20</th>
       <th>Country/Region</th>
       <th>Population</th>
     </tr>
@@ -1710,21 +1138,9 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>39422</td>
-      <td>39486</td>
-      <td>39548</td>
-      <td>39616</td>
-      <td>39693</td>
-      <td>39703</td>
-      <td>39799</td>
-      <td>39870</td>
+      <td>40073</td>
+      <td>40141</td>
       <td>Afghanistan</td>
       <td>37172386</td>
     </tr>
@@ -1734,21 +1150,9 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>14410</td>
-      <td>14568</td>
-      <td>14730</td>
-      <td>14899</td>
-      <td>15066</td>
-      <td>15231</td>
-      <td>15399</td>
-      <td>15570</td>
+      <td>16501</td>
+      <td>16774</td>
       <td>Albania</td>
       <td>2866376</td>
     </tr>
@@ -1758,21 +1162,9 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>52270</td>
-      <td>52399</td>
-      <td>52520</td>
-      <td>52658</td>
-      <td>52804</td>
-      <td>52940</td>
-      <td>53072</td>
-      <td>53325</td>
+      <td>53998</td>
+      <td>54203</td>
       <td>Algeria</td>
       <td>42228429</td>
     </tr>
@@ -1782,21 +1174,9 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>2370</td>
-      <td>2370</td>
-      <td>2568</td>
-      <td>2568</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2995</td>
+      <td>3377</td>
+      <td>3377</td>
       <td>Andorra</td>
       <td>77006</td>
     </tr>
@@ -1806,38 +1186,14 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>5530</td>
-      <td>5725</td>
-      <td>5725</td>
-      <td>5958</td>
-      <td>6031</td>
-      <td>6246</td>
-      <td>6366</td>
-      <td>6488</td>
+      <td>7222</td>
+      <td>7462</td>
       <td>Angola</td>
       <td>30809762</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1854,21 +1210,9 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>41957</td>
-      <td>42432</td>
-      <td>42840</td>
-      <td>43256</td>
-      <td>43664</td>
-      <td>43945</td>
-      <td>44299</td>
-      <td>44684</td>
+      <td>46434</td>
+      <td>46746</td>
       <td>West Bank and Gaza</td>
       <td>4569087</td>
     </tr>
@@ -1878,19 +1222,7 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
       <td>10</td>
       <td>10</td>
       <td>Western Sahara</td>
@@ -1902,21 +1234,9 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>2041</td>
-      <td>2047</td>
-      <td>2049</td>
-      <td>2050</td>
-      <td>2051</td>
-      <td>2051</td>
-      <td>2052</td>
-      <td>2052</td>
+      <td>2055</td>
+      <td>2055</td>
       <td>Yemen</td>
       <td>28498687</td>
     </tr>
@@ -1926,21 +1246,9 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>15089</td>
-      <td>15170</td>
-      <td>15224</td>
-      <td>15301</td>
-      <td>15339</td>
-      <td>15415</td>
-      <td>15458</td>
-      <td>15549</td>
+      <td>15659</td>
+      <td>15789</td>
       <td>Zambia</td>
       <td>17351822</td>
     </tr>
@@ -1950,28 +1258,17 @@ df_w_pop
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>7898</td>
-      <td>7915</td>
-      <td>7919</td>
-      <td>7951</td>
-      <td>7994</td>
-      <td>8010</td>
-      <td>8011</td>
-      <td>8021</td>
+      <td>8099</td>
+      <td>8110</td>
       <td>Zimbabwe</td>
       <td>14439018</td>
     </tr>
   </tbody>
 </table>
-<p>189 rows × 267 columns</p>
+<p>189 rows × 272 columns</p>
 </div>
+
 
 
 Validate with Germany:
@@ -2244,13 +1541,14 @@ Also the hover tooltip is generated from data source dict keys:
         :param selected_keys:
         :return:
         """
-
+{% raw %}
         tooltips = [(f"{revert_special_chars_replacement(x.split('_')[0])} ({x.split('_')[-1]})",
-                     f"@{x}{{(0,0)}}") if x != 'x' else ('Date', '$x{%F}') for x in selected_keys]
+                     f"@{x}{{(0,0)}}") if x != 'x' else ('Date', '$x{\%F}') for x in selected_keys]
         hover = HoverTool(tooltips=tooltips,
                           formatters={'$x': 'datetime'}
                           )
         return hover
+{% endraw %}
 ```
 
 The second plot, the world map, is generate with the following function:
@@ -2418,4 +1716,5 @@ And all this without getting your hands dirty with javascript.
 It is also very good for visualizing streaming data on the fly, e.g., for monitoring systems etc.
 It will stay my tool of choice for these kind of tasks.
 For other interactive plotting I also like the wonderful [Altair](https://altair-viz.github.io/) package.
-You can find the complete source code of the dashboard, notebooks, and config files at my [Github](https://github.com/weichslgartner/covid_dashboard/).
+You can find the complete source code of the dashboard, notebooks, and config files at my [Github](https://github.com/weichslgartner/covid_dashboard/) 
+and the deployed version at [Heroku](https://covid-19-bokeh-dashboard.herokuapp.com/dashboard).
