@@ -7,7 +7,7 @@ description: Curiculum Vitæ of Andreas Weichslgartner
 
 ## Experience
 
-2017 - present | **Developer at Audi AG/Audi Electronic Ventures GmbH**, Gaimersheim, Germany 
+2017 - present | **Developer at Volkswagen car.SW Org/Audi AG/Audi Electronic Ventures GmbH**, Gaimersheim, Germany 
 2010 - 2017    | **Researcher at Friedrich-Alexander-Universität Erlangen-Nürnberg**, Erlangen, Germany
 2008 - 2009    | **Intern at Infineon Technologies AG**, Regensburg, Germany
 
