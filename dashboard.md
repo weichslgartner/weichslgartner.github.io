@@ -12,7 +12,7 @@ However, they often let you not play around with the data and the parameters.
 So why not just build out own and customize it to our preferences.
 For interactive plots and visualization I love to work with bokeh.
 Without having to write javascript you can create everything you need for a dashboard and creates javascript output which can be rendered nicely in your browser.
-The final product looks like this:
+The final product looks like this and the entire source code can be found at [Github](https://github.com/weichslgartner/covid_dashboard/):
 ![gif](img/dashboard/dashboard_demo.gif)
 
 An interactive version is hosted at [Heroku](https://covid-19-bokeh-dashboard.herokuapp.com/dashboard).
@@ -1600,9 +1600,11 @@ We finished the layout of our dashboard, but each time we start it will have the
 If we want to share a specific plot a Rest-Api would be neat.
 For example, something like the following request:
 
-```http request
+```
 https://covid-19-bokeh-dashboard.herokuapp.com/dashboard?country=Germany&country=Finland&per_capita=True&plot_raw=False
 ```
+
+
 After the URL, we append a `?` and then key/value pairs concatenated with `=`.
 Note here, that we can have have multiple values with the same key (important for the country selection).
 
