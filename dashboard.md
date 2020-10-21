@@ -13,6 +13,8 @@ So why not just build out own and customize it to our preferences.
 For interactive plots and visualization I love to work with bokeh.
 Without having to write javascript you can create everything you need for a dashboard and creates javascript output which can be rendered nicely in your browser.
 The final product looks like this and the entire source code can be found at [Github](https://github.com/weichslgartner/covid_dashboard/):
+
+
 ![gif](img/dashboard/dashboard_demo.gif)
 
 An interactive version is hosted at [Heroku](https://covid-19-bokeh-dashboard.herokuapp.com/dashboard).
