@@ -6,7 +6,7 @@ subtitle: List of Academic Writing
 ## 2020
 
 <sub>Journal article</sub>   
-Behnaz Pourmohseni, Michael Glaß, Jörg Henkel, Heba Khdr, Martin Rapp, Valentina Richthammer, Tobias Schwarzer, Fedor Smirnov, Jan Spieck, Jürgen Teich, Andreas Weichslgartner, Stefan Wildermann: **Hybrid Application Mapping for Composable Many-Core Systems: Overview and Future Perspective.** In Journal of Low Power Electronics and Applications 10.4 (2020), pp. 1-17. MDPI. 2020. [Link](https://www.mdpi.com/2079-9268/10/4/38/htm)
+Behnaz Pourmohseni, Michael Glaß, Jörg Henkel, Heba Khdr, Martin Rapp, Valentina Richthammer, Tobias Schwarzer, Fedor Smirnov, Jan Spieck, Jürgen Teich, Andreas Weichslgartner, Stefan Wildermann: **Hybrid Application Mapping for Composable Many-Core Systems: Overview and Future Perspective.** In Journal of Low Power Electronics and Applications 10.4 (2020), pp. 1-37. MDPI. 2020. [Link](https://www.mdpi.com/2079-9268/10/4/38/htm)
 
 <sub>Conference paper</sub>   
 Philipp Weiss, Andreas Weichslgartner, Felix Reimann, Sebastian Steinhorst: **Fail-Operational Automotive Software Design Using Agent-Based Graceful Degradation.** In Proceedings of 2020 Design, Automation & Test in Europe Conference & Exhibition (DATE), pp. 1169-1174. IEEE. 2020. [Link](https://ieeexplore.ieee.org/abstract/document/9116322/)
