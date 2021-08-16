@@ -3,6 +3,17 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing
 ---
+## 2021
+<sub>Conference paper</sub>   
+Philipp Weiss, Emil Daporta, Andreas Weichslgartner, Sebastian Steinhorst:
+**Checkpointing Period Optimization of Distributed Fail-Operational Automotive Applications.**
+In Proceedings of the Euromicro Conference on Digital System Design (DSD 2021), Palermo, Italy, 2021.
+
+<sub>Conference paper</sub>   
+Philipp Weiss, Sherif Elsabbahy, Andreas Weichslgartner, Sebastian Steinhorst:
+**Worst-Case Failover Timing Analysis of Distributed Fail-Operational Automotive Applications.**
+In Proceedings of the Conference on Design, Automation and Test in Europe (DATE 2021), Grenoble, France, 2021.[Link](https://ieeexplore.ieee.org/document/9473950)
+
 ## 2020
 
 <sub>Journal article</sub>   
