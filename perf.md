@@ -8,7 +8,7 @@ comments: true
 
 I was happy to  have finally cracked the [day 18 of Advent of Code 2019](https://adventofcode.com/2019/day/18) and finish all puzzles there.
 The task was to find the shortest path which collects all keys in a maze.
-Some parts of the maze are behind a door with a look which can be opened by the corresponding key.
+Some parts of the maze are behind a door, with a look, which can be opened by the corresponding key.
 Hence, the order of the key collection is important.
 I got a [working solution](https://github.com/weichslgartner/AdventOfCode2019/blob/4461a9caac039a2e3c541c2d4e92332b87f9c138/day18/src/day18.cpp) but the execution time was still not great:
 
@@ -26,7 +26,7 @@ Executed in   12,74 secs    fish           external
 Especially, part b was very slow. 
 
 To dig in why it was so slow i used Linux perf to profile.
-In the past I also tried Intel's Vtune, but this time I wanted to use perf as I saw Fedor Pikus using it in his 2021 cppcon talk.
+In the past I also tried Intel's Vtune, but this time I wanted to use perf as I saw [Fedor Pikus using it in his 2021 cppcon talk](https://www.youtube.com/watch?v=g-WPhYREFjk).
 
 ### Get the Profile
 
@@ -40,25 +40,26 @@ Part 2: 1940
 [ perf record: Captured and wrote 6.618 MB perf.data (173016 samples) ]
 ```
 
-This create a file with the name `perf.data`.
+This created a file with the name `perf.data`.
 We make this readable from userspace with:
 
 ```
 chmod +r perf.data  
 ```
 
-Now we can exit the root shell and continue as normal user.
-This file can be analyzed with:
+Now we can exit the root shell (`Ctrl+D`) and continue as normal user.
+The  `perf.data` file can be analyzed with:
 
 ```
 perf report
 ```
 ![](./img/perf_report.png)
 
-We see that a lot of time is spent in "Rb_tree" computation and memory allocation.
+We see that a lot of time is spent in "Rb_tree*" computation and memory allocation.
 [Red Black Trees (RB Trees)](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree) are for ordered sets or ordered hash maps.
 Indeed I used an ordered set (from `#include <set>`) to track my keys and locks. 
 Cause I needed to track also the locations which I already explored, I converted the char set to a string and hashed this string with `std::hash<std::string>{}(keys)`.
+These strings are also using dynamic memory allocation (they get bigger than small string optimization size).
 So if we can replace this inefficient ordered sets with something less compute intensive we should get the execution time down.
 
 
@@ -67,7 +68,7 @@ So if we can replace this inefficient ordered sets with something less compute i
 
 We already found what we searched for, but let's quickly install [google's pprof](https://github.com/google/pprof) a nice visualization tool for profile data.
 
-We can install it with (I use fish shell):
+We can install it with the following comand (given an installed Go compiler):
 
 ```
 go get github.com/google/pprof@latest 
@@ -88,7 +89,7 @@ export PATH=~/go/bin:$PATH
 ```
 
 The we need another google tool to convert perf data.
-This one uses Bazel build system, but my local bazel was quite old and I read on the internet that the cool kids use bazelisk.
+This one uses Bazel build system, but my local bazel was quite old and I read on the internet that the cool kids use bazelisk to keep their bazel uptodate.
 
 
 ```
@@ -117,7 +118,7 @@ You can also profile and visualize a lot of other cool stuff with perf and pprof
 
 ## Use a More Efficient Data Structure than Set
 
-As we identified the root cause of our high execution time, it is time to fix it.
+As we identified the root cause of our high execution time (ordered sets and temporary strings), it is time to fix it.
 We used ordered sets to store characters (`['a' .. 'z']` for keys and  `['A' .. 'Z']` for locks).
 Hence, the maximal length is 26. 
 So if we use [one hot encoding](https://en.wikipedia.org/wiki/One-hot) we can fit this in a 32 bit value.
@@ -175,6 +176,7 @@ struct ExploreElement {
 ```
 
 So our datastruct got much smaller and also the operations are simpler now.
+To check if two key sets are the same wie can now use the `=` operator.
 
 To define the position of a character in our new datastructure we define:
 
@@ -189,7 +191,7 @@ constexpr uint32_t lock_index(uint8_t c){
 ```
 
 
-Where we used `keys.size()` before we can now count the 1 bits with the c++ 20 `std::popcount()`:
+Where we used `keys.size()` before, we can now count the 1 bits with the c++ 20 `std::popcount()`:
 
 ```cpp
 struct LessThanExploreElement {
@@ -199,19 +201,17 @@ struct LessThanExploreElement {
 };
 ```
 
-To add a key we can use a logical or:
+To add a key (equivalent to `set<char>::insert(char c)`) we can use a logical or:
 
 ```cpp
-auto new_keys = keys;
-if (is_key(found->second)) {
-    new_keys |= key_index(found->second);
+keys |= key_index(c);
 }
 ```
 
-To check if a key is set we use a logical and:
+To check if a key is set (equivalent to `set<char>::find(char c)`) we use a logical and:
 
 ```cpp
-static_cast<bool>(key_index(std::tolower(c)) & keys)
+static_cast<bool>(key_index(c) & keys)
 ```
 
 Finally, we have to change some CMake stuff.
