@@ -4,7 +4,7 @@ title: Projects
 subtitle: Profile and optimize 
 comments: true
 ---
-## Profiling and Optimizing C++
+## Profiling and Optimizing a C++ Program
 
 I was happy to  have finally cracked the [day 18 of Advent of Code 2019](https://adventofcode.com/2019/day/18) and finish all puzzles there.
 The task was to find the shortest path which collects all keys in a maze.
