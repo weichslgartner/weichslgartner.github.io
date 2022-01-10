@@ -29,6 +29,7 @@ navbar-links:
   Projects:
     - Kicker Manager Optimization: "kicker"
     - Bokeh Covid Dashboard: "dashboard"
+    - Profiling/Optimizing C++: "perf"
   Music: "music"
  
 

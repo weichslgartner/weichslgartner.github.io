@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-subtitle: Profile and optimize
+subtitle: Profile and optimize 
 comments: true
 ---
 ## Profiling and Optimizing C++
@@ -10,7 +10,7 @@ I was happy to  have finally cracked the [day 18 of Advent of Code 2019](https:/
 The task was to find the shortest path which collects all keys in a maze.
 Some parts of the maze are behind a door with a look which can be opened by the corresponding key.
 Hence, the order of the key collection is important.
-I got a working solution but the execution time was still not great:
+I got a [working solution](https://github.com/weichslgartner/AdventOfCode2019/blob/4461a9caac039a2e3c541c2d4e92332b87f9c138/day18/src/day18.cpp) but the execution time was still not great:
 
 ```
 time ./bin/day18                   
@@ -250,3 +250,4 @@ Executed in  213,32 millis    fish           external
 ```
 
 Pretty good speed up or?
+The changed program can be found [here](https://github.com/weichslgartner/AdventOfCode2019/blob/d405e22a6003ac10fdd0c1193f1aa27ecfb569b2/day18/src/day18.cpp).
