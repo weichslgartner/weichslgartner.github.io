@@ -205,7 +205,6 @@ To add a key (equivalent to `set<char>::insert(char c)`) we can use a logical or
 
 ```cpp
 keys |= key_index(c);
-}
 ```
 
 To check if a key is set (equivalent to `set<char>::find(char c)`) we use a logical and:
