@@ -141,7 +141,7 @@ struct ExploreElement {
   }
 };
 ```
-
+To:
 ```cpp
 struct ExploreElement {
   std::set<char> keys;
@@ -157,7 +157,7 @@ struct ExploreElement {
            cur_point[3] == other.cur_point[3];
   }
 };
-```W
+```
 
 So our datastruct got much smaller and also the operations are simpler now.
 To check if two key sets are the same wie can now use the `=` operator.
