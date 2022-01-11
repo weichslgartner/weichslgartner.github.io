@@ -231,6 +231,13 @@ if(COMPILER_SUPPORTS_MARCH_NATIVE)
 endif()
 ```
 
+
+The difference between compiling with `march=native` and without can be seen at the [godbolt diff](https://godbolt.org/z/GfKxbj8Pv). 
+The left assembly uses `march=native` and generates the [x86 popcnt instruction](https://en.wikipedia.org/wiki/SSE4#POPCNT_and_LZCNT) while right assembly uses quite some instructions for bit counting. 
+
+![](/img/popcnt.png)
+
+
 Now rebuild our program:
 
 ```
