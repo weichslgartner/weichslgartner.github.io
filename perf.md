@@ -125,7 +125,7 @@ So if we use [one hot encoding](https://en.wikipedia.org/wiki/One-hot) we can fi
 
 We change our central data structure from:
 
-```
+```cpp
 struct ExploreElement {
   std::set<char> keys;
   std::set<char> locks;
@@ -144,13 +144,12 @@ struct ExploreElement {
 To:
 ```cpp
 struct ExploreElement {
-  std::set<char> keys;
-  std::set<char> locks;
+  uint32_t keys;
+  uint32_t locks;
   std::array<Point, 4> cur_point;
   int steps;
   bool operator==(const ExploreElement &other) const {
-    return std::string(keys.begin(), keys.end()) ==
-               std::string(other.keys.begin(), other.keys.end()) &&
+    return keys = other.keys &&
            cur_point[0] == other.cur_point[0] &&
            cur_point[1] == other.cur_point[1] &&
            cur_point[2] == other.cur_point[2] &&
