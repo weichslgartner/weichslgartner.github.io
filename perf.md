@@ -158,7 +158,7 @@ struct ExploreElement {
 };
 ```
 
-So our datastruct got much smaller and also the operations are simpler now.
+So our data struct got much smaller and also the operations are simpler now.
 To check if two key sets are the same wie can now use the `=` operator.
 
 To define the position of a character in our new datastructure we define:
