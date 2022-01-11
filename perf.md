@@ -157,23 +157,7 @@ struct ExploreElement {
            cur_point[3] == other.cur_point[3];
   }
 };
-```
-
-```cpp
-struct ExploreElement {
-  uint32_t keys;
-  uint32_t locks;
-  std::array<Point, 4> cur_point;
-  int steps;
-  bool operator==(const ExploreElement &other) const {
-    return keys == other.keys &&
-           cur_point[0] == other.cur_point[0] &&
-           cur_point[1] == other.cur_point[1] &&
-           cur_point[2] == other.cur_point[2] &&
-           cur_point[3] == other.cur_point[3];
-  }
-};
-```
+```W
 
 So our datastruct got much smaller and also the operations are simpler now.
 To check if two key sets are the same wie can now use the `=` operator.
