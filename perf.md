@@ -8,7 +8,7 @@ comments: true
 
 I was happy to  have finally cracked the [day 18 of Advent of Code 2019](https://adventofcode.com/2019/day/18) and finish all puzzles there.
 The task was to find the shortest path which collects all keys in a maze.
-Some parts of the maze are behind a door, with a look, which can be opened by the corresponding key.
+Some parts of the maze are behind a door, with a lock, which can be opened by the corresponding key.
 Hence, the order of the key collection is important.
 I got a [working solution](https://github.com/weichslgartner/AdventOfCode2019/blob/4461a9caac039a2e3c541c2d4e92332b87f9c138/day18/src/day18.cpp) but the execution time was still not great:
 
@@ -30,7 +30,7 @@ In the past I also tried Intel's Vtune, but this time I wanted to use perf as I 
 
 ### Get the Profile
 
-To get the profiling data we run perf in a root shell (`sudo -s`; alternativly you can enable temporaly perf in userspace with `sudo sysctl -w kernel.perf_event_paranoid=-1` but then some symbols were missing so root was easier):
+To get the profiling data we run perf in a root shell (`sudo -s`; alternativly you can enable temporaly perf in userspace with `sudo sysctl -w kernel.perf_event_paranoid=-1` but then some symbols were missing, so root was easier):
 
 ```
 perf record ./bin/day18                                 
