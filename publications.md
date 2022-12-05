@@ -3,6 +3,12 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing
 ---
+## 2022
+<sub>Conference Talk</sub>   
+Andreas Weichslgartner:
+**Historical Vulnerabilities in the Automotive Spaces.**
+FuzzCon Europe - Automotive Edition, Virtual 2022. [Slides](andreas_weichslgartner_fuzzcon.pdf) [Video](https://www.youtube.com/watch?v=x9C9_ipD3HI)
+
 ## 2021
 <sub>Conference paper</sub>   
 Philipp Weiss, Emil Daporta, Andreas Weichslgartner, Sebastian Steinhorst:
