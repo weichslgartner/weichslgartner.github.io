@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Publications
-subtitle: List of Academic Writing
+subtitle: List of Academic Writing and Public Talks
 ---
 ## 2022
 <sub>Conference Talk</sub>   
