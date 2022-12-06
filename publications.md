@@ -33,7 +33,7 @@ Philipp Weiss, Sebastian Nagel, Andreas Weichslgartner, Sebastian Steinhorst: **
 
 ## 2019 
 <sub>Conference paper</sub>   
-Andreas Weichslgartner: **Embedded Intrusion Detection based on AI.** In Proceedings of Electronics In Vehicles (ELIV), pp. 1-10. VDI. 2019. [Link](https://www.karambasecurity.com/static/pdf/IDS-Audi.pdf)
+Andreas Weichslgartner: **Embedded Intrusion Detection based on AI.** In Proceedings of Electronics In Vehicles (ELIV), pp. 1-10. VDI. 2019. [Link](../IDS-Audi.pdf)
 
 ## 2018
 <sub>Book</sub>   
