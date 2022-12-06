@@ -13,7 +13,7 @@ FuzzCon Europe - Automotive Edition, Virtual, 2022. [Slides](../andreas_weichslg
 <sub>Conference paper</sub>   
 Philipp Weiss, Emil Daporta, Andreas Weichslgartner, Sebastian Steinhorst:
 **Checkpointing Period Optimization of Distributed Fail-Operational Automotive Applications.**
-In Proceedings of the Euromicro Conference on Digital System Design (DSD 2021), Palermo, Italy, 2021.
+In Proceedings of the Euromicro Conference on Digital System Design (DSD 2021), Palermo, Italy, 2021. [Link](https://tum-esi.github.io/publications-list/PDF/2021-DSD-Checkpointing%20Period%20Optimization%20of%20Distributed%20Fail-Operational%20Automotive%20Applications.pdf)
 
 <sub>Conference paper</sub>   
 Philipp Weiss, Sherif Elsabbahy, Andreas Weichslgartner, Sebastian Steinhorst:
