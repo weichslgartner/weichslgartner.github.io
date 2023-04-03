@@ -3,7 +3,14 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing and Public Talks
 ---
+## 2023
+<sub>Book Chapter</sub>   
+Jan Urfei, Fedor Smirnov, Andreas Weichslgartner, Stefan Wildermann:
+**Gradient-free Adversarial Attacks on 3D Point Clouds from LiDAR Sensors.**
+Machine Learning and Optimization Techniques for Automotive Cyber-Physical Systems, 1st ed. 2023. [Link](https://www.amazon.com/Learning-Optimization-Techniques-Automotive-Cyber-Physical/dp/3031280156)
+
 ## 2022
+
 <sub>Conference Talk</sub>   
 Andreas Weichslgartner:
 **Historical Vulnerabilities in the Automotive Spaces.**
