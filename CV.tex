@@ -1,0 +1,260 @@
+%% start of file `moderncv_ntrp_template_en.tex'.
+%% Copyright 2007 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+%
+% Modded by ntrp (nitropowered@gmail.com)
+
+\documentclass[11pt,a4paper, sans, colorlinks, linkcolor=true]{moderncv}
+
+\usepackage[english]{babel}
+%\addto{\captionsenglish}{%
+%	\renewcommand{\bibname}{Publications}
+%}
+
+%\addbibresource{me.bib}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+%\usepackage{fontspec}:
+%\usepackage{fontawesome}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[grey]{classic}                % idem
+
+\usepackage[T1]{fontenc}
+% character encoding
+\usepackage[utf8x]{inputenc}                   % replace by the encoding you are using
+
+
+
+% adjust the page margins
+\usepackage[scale=0.95]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+\makeatletter
+\renewcommand*{\recomputeletterlengths}{%
+	\recomputecvlengths%
+	\setlength{\parskip}{6\p@}}
+
+\newcommand*{\subject}[1]{\def\@subject{#1}}                    %% new command added
+
+\renewcommand*{\makelettertitle}{%
+	% recompute lengths (in case we are switching from letter to resume, or vice versa)
+	\recomputeletterlengths%
+	% sender contact info
+	\hfill%                                      %%% <========== This commented
+	\begin{minipage}{.3\textwidth}%
+		% optional detailed information
+		\if@details%
+		\raggedleft%
+		\addressfont\textcolor{color2}{%
+			{\bfseries\upshape\@firstname~\@lastname}\@firstdetailselementfalse%
+			% optional detailed information
+			\ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+				\ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}% if \addresstreet is defined, \addresscity and addresscountry will always be defined but could be empty
+				\ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}}%
+			\collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
+				\makenewline\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}%
+			\ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
+			\ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+			\ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi%
+	\end{minipage}\\[1em]
+	% recipient block
+	\begin{minipage}[t]{.5\textwidth}
+		\raggedright%
+		\addressfont%
+		{\bfseries\upshape\@recipientname}\\%
+		\@recipientaddress%
+	\end{minipage}
+	% \date
+	\hfill% US style
+	%  \\[1em]% UK style
+	\@date\\[2em]%                                                         %%% Changed here    
+	\raggedright%
+	\ifthenelse{\isundefined{\@subject}}{}{%                              %% new command added
+		\begin{tabular}{ p{0.09\textwidth} p{0.91\textwidth} }
+			\bfseries	Subject: & \raggedright \@subject
+		\end{tabular}
+		\\[1.5em]}%
+	% opening
+	\raggedright%
+	\@opening\\[1.5em]%
+	\hspace{0pt}\par\vspace{-\baselineskip}\vspace{-\parskip}}
+
+
+\makeatother
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footnotesize } % other info in "inner" position of footer line
+
+% personal data
+\firstname{Dr. Andreas}
+\familyname{Weichslgartner}
+\title{Resume}               % optional, remove the line if not wanted
+\address{Tulpenstr. 15}{90439 Nürnberg}{Germany}    % optional, remove the line if not wanted
+%\mobile{+49-159-0530-9323}                    % optional, remove the line if not wanted
+\phone{+49-176-64059039}                      % optional, remove the line if not wanted
+% \fax{<Fax number>}                          % optional, remove the line if not wanted
+\email{weichslgartner@gmail.com}  
+%\faGithub                    % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
+%\photo[100pt] {} %{photo_suitDressed_small.jpg}                        % '64pt' is the height the picture must be resized 
+%to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+% \quote{"Success is the ability to go from failure to failure without losing your enthusiasm." -- Winston Churchill}                 % optional, remove the line if not wanted
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\hypersetup{urlcolor=blue}
+
+%Section
+
+\maketitle
+%\section{Info}
+%\cvline{Date of birth}{\small 27.06.1983 \normalsize}
+%\cvline{Place of birth}{\small Kelheim, Germany\normalsize}
+%\cvline{Marital status}{\small Married\normalsize}
+%\cvcomputer{Citizenship}{\small German\normalsize}{}{}
+% \cvline{Elance}{\small \url{<Link to profile>}\normalsize}
+%\cvline{LinkedIn}{\small \url{https://www.linkedin.com/profile/view?id=AndreasWeichslgartner}\normalsize}
+% \cvline{Blog}{\small \url{<Link to profile>}\normalsize}
+% \cvline{Skype}{\small vahid.lari\normalsize}
+%\section{Key Skills}
+%Strong hardware and software skills; Strong background in mathematics, communication networks, and security; Experience in 	interdisciplinary  and intercultural teams; Flexible; Self-driven working; Fast learner; Abstract problem solving
+%%Section
+%\section{Research Interests}
+%%\cvline{}{\Large <Desidered employment>}
+%%\cvline{}{\small <Skills>}
+%Application Mapping, Machine Learning, Network-on-Chips, Multi-/Many-Core Systems, Security, FPGAs, Design Space Exploration, Optimization, Embedded Systems, Real-Time Systems
+\vspace{-1.5cm}
+\section{Experience}
+\cventry{5.2017-\\now}{Senior Technical Security Engineer}{CARIAD SE(2020-now)/Audi AG(2017-2020)}{Ingolstadt}{Germany} {Designed and implemented an embedded machine-learning-based intrusion detection system (IDS) prototype in \textbf{C/C++/Tensorflow/Scikit-Learn/Numpy} for detecting anomalies in POSIX systems and automotive networks (\textbf{CAN, Ethernet}). 
+Performed data analysis of network data, Linux audit files, security risk analysis, vulnerability management research in \textbf{Python/Pandas/Polars}. 
+%Generated machine learning models for anomaly detection with \textbf{Tensorflow/Scikit-Learn/Numpy}. 
+Was the lead developer/architect in an \textbf{agile team (SCRUM)} to design and implement the \textbf{series automotive software} of infotainment IDS in \textbf{C++} in  for the upcoming Premium Platform Electric of the VW Group.
+Pushed continous fuzz testing and security testing inside Cariad as technical expert.
+Worked on research projects like ML-based \textbf{fuzzing}, \textbf{adversarial attacks on LiDAR}, or \textbf{embedded post quantum cryptography}. 
+Was involved in several penetration-test activities and held internal workshops (e.g., secure coding, fuzzing, ML in security), gave talks (e.g., {\href{https://weichslgartner.github.io/andreas_weichslgartner_fuzzcon.pdf}{FuzzCon 22}}, {\href{https://weichslgartner.github.io/IDS-Audi.pdf}{ELIV 19}}), and participated in panel discussions (e.g., Cariad Security Summit). Supervised PhD/Master students and interns.  }
+\cventry{9.2010-4.2017}{Researcher at the Department of Hardware/Software Co-Design}{Friedrich-Alexander-Universit\"at Erlangen-N\"urnberg 
+	(FAU)}{Erlangen}{Germany} {Conducted research on optimization, real-time/embedded systems, security, software (\textbf{Java, Python, C}) and hardware (\textbf{VHDL}) development. Collaborated in a transregional research center with 60 international researchers on future many-core architectures. (Co)authored various peer-reviewed research papers at international conferences (23 papers, e.g., CODES+ISSS, DATE, DAC), leading journals (9 articles, e.g., ACM TECS, IEEE TCAD), and a \href{https://link.springer.com/book/10.1007/978-981-10-7356-4}{book}. Acted as a member of a program committee (ReConFig) and reviewer for several conferences/journals. 
+%	Presented his work in front of leading researchers and the broad public in conferences, workshops, and exhibitions. 
+%	Was selected as member of the program committee of ReConFig'16.
+	Supervised students' theses and was involved in teaching (e.g., foundations of technical computer science, design of interactive embedded systems).} % arguments 3 to 6 are optional
+\cventry{9.2009-1.2010}{Internship: Embedded Linux and Waver Testing}{Infineon Technologies AG}{Regensburg}{Germany}{Developed an embedded Linux solution for intrinsic data monitoring of wafer testing machines. 
+Included a C program for real-time logging/filtering of raw machine data and a web interface/dashboard.}
+\cventry{2003-2004}{Civil Service (Zivildienst)}{Kreiskrankenhaus Kelheim}{Kelheim}{Germany}{}
+\vspace{-0,4cm}
+%Section
+\section{Education}
+\cventry{2010-2017}{PhD (Dr.-Ing.) in Computer Science at the Department of Hardware/Software Co-Design}{Friedrich-Alexander-Universit\"at Erlangen-N\"urnberg 
+(FAU)}{Erlangen}{Germany}{}
+\cvline{Thesis}{Application Mapping Methodologies for Invasive NoC-Based Architectures (Grade 1.1) }
+ % arguments 3 to 6 are optional
+ %\cvline{Supervisor}{Prof. Dr.-Ing. Jürgen Teich}
+\cventry{2004-2010}{Diploma (Dipl.-Ing.) in Information and Communication Technology}{Friedrich-Alexander-Universit\"at Erlangen-N\"urnberg 
+(FAU)}{Erlangen}{Germany (Grade 1.3)}{} % arguments 3 to 6 are 
+%optional
+ %\cvline{GPA}{1.3 (very good)}
+% \cvline{supervisors}{Prof. Dr. Seyed Ghassem Miremadi}
+% \cvline{Area of Study}{\small Computer Engineering}
+% \cvline{Thesis}{Decentralized Embedding of Communication Topologies onto Networks-on-Chip (Grade 1.0)}
+
+
+
+\vspace{-0,6cm}
+\section{Software Skills} 
+
+\cvline{Languages\\Technology}{
+\begin{itemize}
+\item  Python (experienced), C++ (experienced), C (experienced), Java (intermediate),  Rust (intermediate)
+\item  Git (experienced), CI/CD: GH Actions, Gitlab, Jfrog (experienced), Docker (intermediate), 
+\end{itemize}
+} {}{}
+\vspace{-0,9cm}
+% 
+% 
+% %Section
+% \section{Experience}
+% \subsection{Working}
+% \cventry{start-end}{<Position Held>}{<Name of employer>}{<Place>}{<Country>}{<Description>} % arguments 3 to 6 are optional
+% \cventry{start-end}{<Position Held>}{<Name of employer>}{<Place>}{<Country>}{<Description>} % arguments 3 to 6 are optional
+% \subsection{Academic}
+% \cventry{start-end}{<Brief Description>}{<Institution>}{<Place>}{<Country>}{<Description>} % arguments 3 to 6 are optional
+% \subsection{Various}
+% \cventry{start-end}{<Brief Description>}{<Institution>}{<Place>}{<Country>}{<Description>} % arguments 3 to 6 are optional
+
+%Section
+%\section{Master thesis}
+%\cvline{title}{\emph{Title}}
+%\cvline{supervisors}{Supervisors}
+%\cvline{description}{\small Short thesis abstract}
+\section{Selected Publications} 
+\begin{itemize}
+{\footnotesize	\item J. Urfei, F. Smirnov, A. Weichslgartner, S. Wildermann: Gradient-free Adversarial Attacks on 3D Point Clouds from LiDAR Sensors. Machine Learning and Optimization Techniques for Automotive Cyber-Physical Systems, 1st ed., Springer, 2023.
+	\item A. Weichslgartner: Embedded Intrusion Detection based on AI. In Proceedings of Electronics In Vehicles (ELIV), pp. 1-10. VDI. 2019.
+	\item A. Weichslgartner, et al.: Invasive Computing for Mapping Parallel Programs to Many-Core Architectures. Pages 1-185. Springer Singapore. 2018.
+	\item A. Weichslgartner, et al.: Design-Time/Run-Time Mapping of Security-Critical Applications in Heterogeneous MPSoCs. In Proceedings of SCOPES, pp. 153-162. 2016.}
+\end{itemize}
+
+
+%Section
+\section{Languages}
+German (native), English (full professional proficiency), Portuguese (limited working proficiency)
+
+
+%Section
+%\section{Interests and Hobbies}
+
+%Traveling, Programming (e.g., Advent of Code), Climbing, Music (playing guitar/bass, concerts), Reading, Art, Cooking 
+
+\section{Links}
+\href{https://scholar.google.com/citations?user=qJzMnhUAAAAJ}{Google Scholar}, \href{https://weichslgartner.github.io}{Blog}, \href{https://github.com/weichslgartner}{Github}, \href{https://linkedin.com/in/andreas-weichslgartner}{Linkedin},
+ 
+
+% %Section
+% \section*{Extra}
+% \cvline{<Extra Content>}{\small <Description>}
+% \small
+% \cvlistitem{\href{...}{<Eventual link>}}
+% \cvlistitem{\href{...}{<Eventual link>}}
+% 
+% \closesection{}                   % needed to renewcommands
+% \renewcommand{\listitemsymbol}{-} % change the symbol for lists
+%\clearpage
+% Publications from a BibTeX file
+
+%\nocite{*}
+%\input{../cvownpublication}
+%\renewcommand{\refname}{Publications}
+%\bibliographystyle{unsrt}
+%\bibliography{../me}       % 'publications' is the name of a BibTeX file
+
+
+%\clearpage
+%\section{Initiation of PhD Process}
+%\centering
+%\includegraphics[height=0.96\textheight]{dokumente/promotionsverfahren}
+%
+%\clearpage
+%\section{University Diploma}
+%\includegraphics[height=0.96\textheight,page=1]{dokumente/combined}
+%\includegraphics[height=0.96\textheight,page=2]{dokumente/combined}
+%\includegraphics[height=0.96\textheight,page=3]{dokumente/combined}
+%\includegraphics[page=4,height=0.96\textheight]{dokumente/combined}
+%\clearpage
+%\section{Abitur Certificate}
+%\includegraphics[height=0.96\textheight,page=1]{dokumente/abitur}
+%\includegraphics[height=0.96\textheight,page=2]{dokumente/abitur}
+%\clearpage
+%\section{Internship Certification}
+%\includegraphics[height=0.96\textheight]{dokumente/praktikumszeugis}
+
+\end{document}
