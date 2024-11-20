@@ -9,7 +9,8 @@ description: Curiculum Vitæ of Andreas Weichslgartner
 
 ## Experience
 
-2017 - present | **Developer at Cariad SE/Volkswagen car.SW Org/Audi AG/Audi Electronic Ventures GmbH**, Gaimersheim, Germany 
+2020 - current | **Senior Technical Security Engineer/SW Engineer at Cariad SE**, Nuremberg, Germany  
+2017 - 2020    | **Developer Volkswagen Audi AG/Audi Electronic Ventures GmbH**, Gaimersheim, Germany 
 2010 - 2017    | **Researcher at Friedrich-Alexander-Universität Erlangen-Nürnberg**, Erlangen, Germany
 2008 - 2009    | **Intern at Infineon Technologies AG**, Regensburg, Germany
 

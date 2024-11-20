@@ -3,20 +3,36 @@ layout: page
 title: Publications
 subtitle: List of Academic Writing and Public Talks
 ---
+## 2024
+
+<sub>Conference Talk</sub>     
+Andreas Weichslgartner, Joyabrata Ghosh, Vineeth Bharadwaj Prasanna:
+**Shifting Left Vulnerability Management.**
+Secure Our Streets Conference, Virtual, 2024. [Slides](https://sos.asrg.io/wp-content/uploads/2024/09/Andreas-Weichslgartner-and-Vineeth-B.-Prasanna_Presentation-Slides_SOS2024.pdf),[Videos](https://youtu.be/EdPer-OhZd0?list=PLbgz-8Y_0pOplSa_3MuV4Cjz2_VOHmWNa)
+
+<sub>Conference Talk</sub>     
+Andreas Weichslgartner, Joyabrata Ghosh, Vineeth Bharadwaj Prasanna:
+**Finding, Managing, Preventing Vulnerabilities: An Automotive Perspective.**
+CVE/FIRST VulnCon 2024 & Annual CNA Summit, Raleigh (NC), USA, 2024. [Slides](https://www.first.org/resources/papers/vulncon2024/VulnCon-Finding-Managing-Preventing-Vulnerabilities-Ghosh-Weichslagartner-Bharadwaj.pdf)
+
+
+<sub>Guest Lecture</sub>     
+Andreas Weichslgartner, Vineeth Bharadwaj Prasanna:
+**Finding, Handling, and Preventing Automotive-Software Vulnerabilities.**
+IT Security Infrastructures Lab, Friedrich-Alexander-Universität, Erlangen, Germany, 2024.
+
 ## 2023
-
-
 
 <sub>Conference Paper</sub>   
 Andreas Weichslgartner:
 **Automotive Software Vulnerabilities: Strategies for Early Detection, Mitigation, and Prevention in the Software-Development-Lifecycle.**
-Electronics In Vehicles (ELIV). VDI. Bonn, 2023. [Link](https://www.vdiconference.com/fileadmin/resources/microsites/ELIV/01TA101023_ELIV_final.pdf) (to appear)
+Electronics In Vehicles (ELIV). VDI. Bonn, 2023. [Link](https://www.vdiconference.com/fileadmin/resources/microsites/ELIV/01TA101023_ELIV_final.pdf) 
 
 
 <sub>Book Chapter</sub>   
 Jan Urfei, Fedor Smirnov, Andreas Weichslgartner, Stefan Wildermann:
 **Gradient-free Adversarial Attacks on 3D Point Clouds from LiDAR Sensors.**
-Machine Learning and Optimization Techniques for Automotive Cyber-Physical Systems, 1st ed. 2023. [Link](https://www.amazon.com/Learning-Optimization-Techniques-Automotive-Cyber-Physical/dp/3031280156) (to appear)
+Machine Learning and Optimization Techniques for Automotive Cyber-Physical Systems, 1st ed. 2023. [Link](https://www.amazon.com/Learning-Optimization-Techniques-Automotive-Cyber-Physical/dp/3031280156) 
 
 
 <sub>Workshop Talk</sub>   
