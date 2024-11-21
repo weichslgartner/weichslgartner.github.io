@@ -8,12 +8,18 @@ subtitle: List of Academic Writing and Public Talks
 <sub>Conference Talk</sub>     
 Andreas Weichslgartner, Joyabrata Ghosh, Vineeth Bharadwaj Prasanna:
 **Shifting Left Vulnerability Management.**
-Secure Our Streets Conference, Virtual, 2024. [Slides](https://sos.asrg.io/wp-content/uploads/2024/09/Andreas-Weichslgartner-and-Vineeth-B.-Prasanna_Presentation-Slides_SOS2024.pdf),[Videos](https://youtu.be/EdPer-OhZd0?list=PLbgz-8Y_0pOplSa_3MuV4Cjz2_VOHmWNa)
+Secure Our Streets Conference, Virtual, 2024. [Slides](https://sos.asrg.io/wp-content/uploads/2024/09/Andreas-Weichslgartner-and-Vineeth-B.-Prasanna_Presentation-Slides_SOS2024.pdf), [Video](https://youtu.be/EdPer-OhZd0?list=PLbgz-8Y_0pOplSa_3MuV4Cjz2_VOHmWNa)
 
 <sub>Conference Talk</sub>     
 Andreas Weichslgartner, Joyabrata Ghosh, Vineeth Bharadwaj Prasanna:
 **Finding, Managing, Preventing Vulnerabilities: An Automotive Perspective.**
-CVE/FIRST VulnCon 2024 & Annual CNA Summit, Raleigh (NC), USA, 2024. [Slides](https://www.first.org/resources/papers/vulncon2024/VulnCon-Finding-Managing-Preventing-Vulnerabilities-Ghosh-Weichslagartner-Bharadwaj.pdf)
+CVE/FIRST VulnCon 2024 & Annual CNA Summit, Raleigh (NC), USA, 2024. [Slides](https://www.first.org/resources/papers/vulncon2024/VulnCon-Finding-Managing-Preventing-Vulnerabilities-Ghosh-Weichslagartner-Bharadwaj.pdf), [Video](https://www.youtube.com/watch?v=BX1b2i-uL8I)
+
+
+<sub>Webinar</sub>     
+Andreas Weichslgartner:
+**How self-learning AI has helped CARIAD build an automotive software powerhouse.**
+Virtual, 2024. [Video](https://www.youtube.com/watch?v=DVoeGibIzzI)
 
 
 <sub>Guest Lecture</sub>     
