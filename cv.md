@@ -21,4 +21,4 @@ description: Curiculum Vitæ of Andreas Weichslgartner
 
 # Detailed
 
-[Detailed PDF version.](cv_2022.pdf)
+[Detailed PDF version.](cv.pdf)
